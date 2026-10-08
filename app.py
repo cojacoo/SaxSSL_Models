@@ -12,6 +12,7 @@ Start:
 
 from __future__ import annotations
 
+import hashlib
 import io
 import json
 import sys
@@ -40,7 +41,9 @@ st.set_page_config(page_title="SaxSSL Bodenschätzung", page_icon="🌱", layout
 
 
 @st.cache_resource
-def get_engine() -> PredictionEngine:
+def get_engine(manifest_hash: str) -> PredictionEngine:
+    # hash in the cache key: Streamlit Cloud keeps the process across pushes,
+    # so new models must invalidate the cached engine
     return PredictionEngine(MANIFEST)
 
 
@@ -65,7 +68,7 @@ st.caption("Schätzung von Bodeneigenschaften aus MIR-Spektren (Bruker Alpha II,
 if not MANIFEST.exists():
     st.error(f"Modelle fehlen: `{MANIFEST}`. Repository vollständig klonen (Ordner `models/`).")
     st.stop()
-engine = get_engine()
+engine = get_engine(hashlib.md5(MANIFEST.read_bytes()).hexdigest())
 manifest = json.loads(MANIFEST.read_text())
 targets = [t["id"] for t in manifest["targets"]]
 # training data per model: mineral models show which local libraries fed them
@@ -125,7 +128,8 @@ st.success(f"{len(files)} Dateien → {len(names)} Proben.")
 use = models[models["group"].isin(sel_groups) & models["origin"].isin(sources)
              & (models["enabled"] | show_d)]
 if use.empty:
-    st.warning("Keine Modelle ausgewählt.")
+    st.warning("Keine Modelle für diese Auswahl – Eigenschaftsgruppen und Modellquellen "
+               "in der Seitenleiste prüfen.")
     st.stop()
 with st.spinner(f"Schätze {len(use)} Modelle für {len(names)} Proben …"):
     res = engine.predict(Xs, wn, names, model_ids=use["model_id"].tolist(),
