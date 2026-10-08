@@ -75,7 +75,7 @@ def read_files(payload: tuple[tuple[str, bytes], ...]):
     return np.asarray(X, float), np.asarray(wn, float), list(ids)
 
 
-st.title("𓂃↟ 𖠰𓂃 ོ𓂃 Terra Resiliens Bodenschätzung ↟↟𓂃 ོ ☼𓂃↟ 𖠰𓂃 ོ𓂃")
+st.title("𓂃↟𖠰 ོ𓂃 Terra Resiliens Bodenschätzung ↟ ོ☼𓂃")
 st.caption("Schätzung von Bodeneigenschaften aus MIR-Spektren (Bruker Alpha II, DRIFT). "
            "Regionale Bibliotheken: SaxSSL (Boden-Dauerbeobachtung Sachsen, Adam et al. 2025) und SaxTox "
            "(Schwermetalle & PAK). Moor-Spezifische Bibliothek pmird (Teickner and Knorr 2025)."
