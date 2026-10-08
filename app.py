@@ -152,9 +152,14 @@ if use.empty:
     st.warning("Keine Modelle für diese Auswahl – Eigenschaftsgruppen und Modellquellen "
                "in der Seitenleiste prüfen.")
     st.stop()
-with st.spinner(f"Schätze {len(use)} Modelle für {len(names)} Proben …"):
-    res = engine.predict(Xs, wn, names, model_ids=use["model_id"].tolist(),
-                         include_disabled=True)
+bar = st.progress(0.0)
+parts = []
+for i, m in enumerate(use.itertuples(), 1):     # one model per call -> visible progress
+    bar.progress((i - 1) / len(use), text=f"Schätze {m.display_name} · {m.origin} "
+                                           f"({i}/{len(use)} Modelle, {len(names)} Proben) …")
+    parts.append(engine.predict(Xs, wn, names, model_ids=[m.model_id], include_disabled=True))
+bar.empty()
+res = pd.concat(parts, ignore_index=True)
 
 tab_res, tab_qc, tab_models, tab_help = st.tabs(
     ["📊 Ergebnisse", "🔍 Spektren & Plausibilität", "🧮 Modelle", "❓ Hilfe"])
