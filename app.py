@@ -37,6 +37,23 @@ MANIFEST = HERE / "models" / "library" / "manifest.json"
 QUALITY = {"A": "🟢 A — gut (RPIQ ≥ 2,5)", "B": "🟡 B — brauchbar (≥ 1,9)",
            "C": "🟠 C — Screening (≥ 1,4)", "D": "🔴 D — unzuverlässig (< 1,4)"}
 
+CREDITS = ("Entwickelt im [DryWet Soil-Water-Lab](https://www.drywet.de), "
+           "TU Bergakademie Freiberg · Code und Modelle: "
+           "[github.com/cojacoo/SaxSSL_Models](https://github.com/cojacoo/SaxSSL_Models) (MIT)")
+
+# origin -> (checkbox label, default, help)
+SOURCE_UI = {
+    "SaxSSL": ("SaxSSL", True, "Sächsische Boden-Dauerbeobachtung (BDF), Archiv + Kampagne 2023."),
+    "SaxTox": ("SaxTox", True, "Belastete Auenböden (FIS Boden): Schwermetalle und PAK."),
+    "SaxSSL+SaxTox": ("SaxSSL+SaxTox (gemeinsam trainiert)", False,
+                      "Ein Modell aus beiden Bibliotheken zusammen; nur für Eigenschaften, "
+                      "die in beiden gemessen wurden."),
+    "Torf (pmird)": ("🌿 Torf (pmird)", False,
+                     "Peatland Mid-Infrared Database (Teickner et al.) für organische Proben. "
+                     "Experimentell: pmird-Spektren sind überwiegend Transmission (KBr), nicht DRIFT."),
+    "OSSL/KSSL": ("OSSL/KSSL (USA)", True, "Open Soil Spectral Library, KSSL-Ausschnitt, USDA-Methoden."),
+}
+
 st.set_page_config(page_title="SaxSSL Bodenschätzung", page_icon="🌱", layout="wide")
 
 
@@ -71,23 +88,21 @@ if not MANIFEST.exists():
 engine = get_engine(hashlib.md5(MANIFEST.read_bytes()).hexdigest())
 manifest = json.loads(MANIFEST.read_text())
 targets = [t["id"] for t in manifest["targets"]]
-# training data per model: mineral models show which local libraries fed them
-SOURCES = {m["id"]: "+".join(m["sources"]) if m.get("model_set") == "mineral" and m.get("sources")
-           else m["origin"] for m in manifest["models"]}
+# pooled models trained on one library only duplicate that library's own model
+DUPLICATE = {m["id"] for m in manifest["models"]
+             if m.get("model_set") == "mineral" and len(m.get("sources", {})) == 1}
 models = engine.list_models()
+models = models[~models["model_id"].isin(DUPLICATE)]
 
 # ---------------------------------------------------------------- sidebar
 with st.sidebar:
     st.header("Einstellungen")
     groups = list(dict.fromkeys(models["group"]))
     sel_groups = st.multiselect("Eigenschaftsgruppen", groups, default=groups)
-    peat = st.checkbox("🌿 Torf-/Moorproben (pmird-Modelle)", value=False,
-                       help="Zusätzliche Modelle aus der Peatland Mid-Infrared Database "
-                            "(Teickner et al.) für organische Proben. Experimentell: pmird-"
-                            "Spektren sind überwiegend Transmission (KBr), nicht DRIFT.")
-    use_ossl = st.checkbox("OSSL/KSSL-Vergleich (USA)", value=True)
-    sources = (["SaxSSL+SaxTox"] + (["Torf (pmird)"] if peat else [])
-               + (["OSSL/KSSL"] if use_ossl else []))
+    st.markdown("**Modellquellen**")
+    present = set(models["origin"])
+    sources = [o for o, (label, on, hlp) in SOURCE_UI.items()
+               if o in present and st.checkbox(label, value=on, help=hlp, key=f"src_{o}")]
     min_class = st.select_slider(
         "Mindestgüte der Modelle", options=["A", "B", "C", "D"], value="C",
         format_func=lambda c: f"{QUALITY_DOT[c]} {c}",
@@ -97,6 +112,8 @@ with st.sidebar:
     avg = st.checkbox("Wiederholungsmessungen je Probe mitteln", value=True,
                       help="Dateien wie 'Probe7-1.0', 'Probe7-2.0' werden zu 'Probe7' gemittelt "
                            "(Bibliotheksspektren sind ebenfalls Mittel aus 4 Messungen).")
+    st.divider()
+    st.caption(CREDITS)
 
 # ---------------------------------------------------------------- upload
 files = st.file_uploader("OPUS-Dateien (.0, .1, …) hochladen — mehrere auf einmal möglich",
@@ -106,7 +123,7 @@ if not files:
             "Unterstützt: Bruker OPUS mit Absorbanzblock (AB).")
     with st.expander("Verfügbare Modelle und Güte"):
         show = models.assign(Güte=models["quality_class"].map(QUALITY),
-                             Quelle=models["model_id"].map(SOURCES))
+                             Quelle=models["origin"])
         st.dataframe(show[["group", "display_name", "unit", "Quelle", "algo", "R2", "RPIQ",
                            "n_train", "Güte"]], hide_index=True, use_container_width=True)
     st.stop()
@@ -143,13 +160,13 @@ tab_res, tab_qc, tab_models, tab_help = st.tabs(
     ["📊 Ergebnisse", "🔍 Spektren & Plausibilität", "🧮 Modelle", "❓ Hilfe"])
 
 with tab_res:
-    corg = res[(res.target == "corg") & (res.origin == "SaxSSL+SaxTox")]
-    organic = corg.loc[corg["value"] > 12, "sample_id"].tolist()
-    if organic and not peat:
+    corg = res[(res.target == "corg") & res.origin.isin(["SaxSSL", "SaxTox", "SaxSSL+SaxTox"])]
+    organic = list(dict.fromkeys(corg.loc[corg["value"] > 12, "sample_id"]))
+    if organic and "Torf (pmird)" not in sources:
         st.info(f"🌿 {', '.join(organic)}: Corg > 12 % — vermutlich organische Probe/Torf. "
                 "Die Mineralboden-Modelle gelten bis ~15 % C; in der Seitenleiste "
-                "**Torf-/Moorproben** aktivieren.")
-    table = result_table(res, targets, SOURCES, with_interval=with_iv)
+                "**🌿 Torf (pmird)** aktivieren.")
+    table = result_table(res, targets, with_interval=with_iv)
     st.dataframe(table, hide_index=True, use_container_width=True,
                  height=min(38 + 35 * len(table), 900),
                  column_config={"Eigenschaft": st.column_config.TextColumn(pinned=True),
@@ -161,7 +178,7 @@ with tab_res:
                f"{AD_ROW}: 🟢 ähnlich · 🟠 am Rand · 🔴 fremd (T²/T²krit). "
                + ("Wert [von–bis] = ~68 %-Intervall (siehe Hilfe)." if with_iv else ""))
 
-    num = result_table(res, targets, SOURCES, numeric=True)
+    num = result_table(res, targets, numeric=True)
     long = res.drop(columns=["ampel", "threshold"], errors="ignore")
     stamp = date.today().isoformat()
     c1, c2 = st.columns(2)
@@ -194,7 +211,7 @@ with tab_qc:
 
 with tab_models:
     show = models.assign(Güte=models["quality_class"].map(QUALITY),
-                         Quelle=models["model_id"].map(SOURCES))
+                         Quelle=models["origin"])
     st.dataframe(show[["group", "display_name", "unit", "Quelle", "algo", "R2", "RMSE",
                        "RPD", "RPIQ", "n_train", "Güte"]],
                  hide_index=True, use_container_width=True)
@@ -209,7 +226,9 @@ MIR-Spektrum voraus. Es sind **Schätzungen**, keine Laboranalysen.
   Sachsen, Archivproben + Kampagne 2023, deutsche Labormethoden (KA5-Textur,
   Königswasser, CaCl₂-pH, soliTOC). **Für sächsische Böden erste Wahl.**
 - **SaxTox** – Rückstellproben belasteter Auenböden (FIS Boden Sachsen) mit Schwermetallen
-  und PAK. Ergänzt SaxSSL bei Textur, C/N, pH und Metallen; einzige Quelle für BaP und PAK16.
+  und PAK; einzige Quelle für BaP und PAK16. Für K und Mg (Königswasser) deutlich besser als SaxSSL.
+- **SaxSSL+SaxTox** – optional: ein Modell aus beiden Bibliotheken zusammen, für Eigenschaften,
+  die in beiden gemessen wurden.
 - **Torf (pmird)** – optional: ~1500 Torfproben weltweit (C, N, C/N, Glühverlust). Nur für
   organische Proben; experimentell, da meist in Transmission (KBr) gemessen.
 - **OSSL/KSSL** – große US-Bibliothek, USDA-Methoden (u. a. Sand/Schluff-Grenze 50 µm statt
@@ -245,4 +264,8 @@ gemittelt.
 - pmird: Teickner & Knorr (2026), SOIL 12, 497,
   [doi:10.5194/soil-12-497-2026](https://doi.org/10.5194/soil-12-497-2026)
 - OSSL: Open Soil Spectral Library, [soilspectroscopy.org](https://soilspectroscopy.org)
+
+**Über diese App** Entwickelt im **DryWet Soil-Water-Lab** der TU Bergakademie Freiberg
+([www.drywet.de](https://www.drywet.de)). Quellcode, Modelle und Anleitung:
+[github.com/cojacoo/SaxSSL_Models](https://github.com/cojacoo/SaxSSL_Models) (MIT-Lizenz).
 """)

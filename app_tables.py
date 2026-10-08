@@ -8,7 +8,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-ORIGIN_ORDER = {"SaxSSL+SaxTox": 0, "Torf (pmird)": 1, "OSSL/KSSL": 2}
+ORIGIN_ORDER = {"SaxSSL": 0, "SaxTox": 1, "SaxSSL+SaxTox": 2, "Torf (pmird)": 3, "OSSL/KSSL": 4}
 QUALITY_DOT = {"A": "🟢", "B": "🟡", "C": "🟠", "D": "🔴"}
 AD_ROW = "Ähnlichkeit zur Bibliothek"
 
@@ -56,12 +56,12 @@ def property_label(row) -> str:
     return f"{QUALITY_DOT.get(row['quality_class'], '⚪')} {row['display_name']}{unit}"
 
 
-def result_table(res: pd.DataFrame, target_order: list[str], sources: dict[str, str],
+def result_table(res: pd.DataFrame, target_order: list[str],
                  with_interval: bool = True, numeric: bool = False) -> pd.DataFrame:
     """Rows = properties (one per model), columns = samples.
 
     The first rows give, per model set, how similar each spectrum is to its
-    training library. `sources` maps model_id -> display name of the training data.
+    training library (column Quelle = model set).
     numeric=True: plain floats (T² ratio in the similarity rows) plus unit/quality
     columns for CSV/Excel; else formatted text with quality dots.
     """
@@ -70,7 +70,7 @@ def result_table(res: pd.DataFrame, target_order: list[str], sources: dict[str, 
     rank_t = {t: i for i, t in enumerate(target_order)}
     res["_t"] = res["target"].map(rank_t).fillna(len(rank_t))
     res["_o"] = res["origin"].map(ORIGIN_ORDER).fillna(9)
-    res["Quelle"] = res["model_id"].map(sources).fillna(res["origin"])
+    res["Quelle"] = res["origin"]
     res = res.sort_values(["_t", "_o"], kind="stable")
 
     ad = (res.dropna(subset=["t2_ratio"]).groupby(["origin", "sample_id"])["t2_ratio"].first()

@@ -29,18 +29,20 @@ def test_upload_table(monkeypatch):
 
     tab = at.dataframe[0].value                        # rows = properties, cols = samples
     assert list(tab.columns) == ["Eigenschaft", "Quelle", "BDF-LAAB", "BDF-LAAC"]
-    assert list(tab["Eigenschaft"][:2]) == ["Ähnlichkeit zur Bibliothek"] * 2
-    assert list(tab["Quelle"][:2]) == ["SaxSSL+SaxTox", "OSSL/KSSL"]
+    assert list(tab["Eigenschaft"][:3]) == ["Ähnlichkeit zur Bibliothek"] * 3
+    assert list(tab["Quelle"][:3]) == ["SaxSSL", "SaxTox", "OSSL/KSSL"]   # default sources
     assert tab.iloc[0, 2][0] in "🟢🟠🔴"                # similarity as traffic light
-    assert tab["Eigenschaft"][2:].str[0].isin(list("🟢🟡🟠")).all()   # quality dots, no D
-    assert {"SaxSSL", "SaxSSL+SaxTox", "SaxTox", "OSSL/KSSL"} <= set(tab["Quelle"])
+    assert tab["Eigenschaft"][3:].str[0].isin(list("🟢🟡🟠")).all()   # quality dots, no D
+    assert set(tab["Quelle"]) == {"SaxSSL", "SaxTox", "OSSL/KSSL"}
     assert not tab.astype(str).apply(lambda c: c.str.contains("annah")).any().any()
 
     at.sidebar.select_slider[0].set_value("A").run()  # only class A
-    assert set(at.dataframe[0].value["Eigenschaft"][2:].str[0]) == {"🟢"}
+    assert set(at.dataframe[0].value["Eigenschaft"][3:].str[0]) == {"🟢"}
     at.sidebar.select_slider[0].set_value("D").run()  # everything incl. D
     assert "🔴" in set(at.dataframe[0].value["Eigenschaft"].str[0])
 
-    at.sidebar.checkbox[0].check().run()               # peat models on
+    at.checkbox(key="src_Torf (pmird)").check().run()   # peat models on
+    at.checkbox(key="src_SaxTox").uncheck().run()       # SaxTox off
     assert not at.exception
-    assert "Torf (pmird)" in set(at.dataframe[0].value["Quelle"])
+    q = set(at.dataframe[0].value["Quelle"])
+    assert "Torf (pmird)" in q and "SaxTox" not in q

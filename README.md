@@ -38,7 +38,7 @@ Zum Ausprobieren: die Dateien aus [`beispiele/`](beispiele) hochladen (2 Proben 
 
 Klassen nach RPIQ auf einem unabhängigen Testset · alle Kennzahlen in [`models/library/metrics.csv`](models/library/metrics.csv)
 
-| | Mineralböden (SaxSSL + SaxTox) |
+| | Mineralböden, gemeinsames Modell (SaxSSL + SaxTox) · Klassen je Einzelbibliothek im Tab *Modelle* |
 |:-:|---|
 | 🟢 **A** | Corg, Ct, Nt, TOC, TOC400, ROC · Ton, Schluff, Sand · pH (CaCl₂) · Fe_d · P (Königswasser) |
 | 🟡 **B** | KAK pot. · Fe_o · Trockenrohdichte · Cr, Ni, Zn |
@@ -90,4 +90,4 @@ nur zusammen mit einem Neutraining ändern.
 
 ---
 
-MIT-Lizenz · TU Bergakademie Freiberg
+Entwickelt im [DryWet Soil-Water-Lab](https://www.drywet.de) der TU Bergakademie Freiberg · MIT-Lizenz
