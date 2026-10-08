@@ -1,9 +1,8 @@
 """
-SaxSSL Bodenschätzung — Bodeneigenschaften aus Bruker-Alpha-II-MIR-Spektren.
+DRIFTS Bodenvariablenschätzung — Bodeneigenschaften aus Bruker-Alpha-II-MIR-Spektren.
 
-Studierende laden ihre OPUS-Dateien (.0) hoch und erhalten eine Tabelle mit
-den Schätzungen der lokalen Bibliotheken (SaxSSL + SaxTox) und der OSSL (KSSL)
-für alle Proben.
+OPUS-Dateien (.0) werden hochgeladen und eine Tabelle mit den Schätzungen der lokalen 
+Bibliotheken (SaxSSL + SaxTox), der OSSL (KSSL) sowie der Torf-Modelle (pmird) für alle Proben.
 
 Start:
     pip install -r requirements.txt
@@ -76,11 +75,11 @@ def read_files(payload: tuple[tuple[str, bytes], ...]):
     return np.asarray(X, float), np.asarray(wn, float), list(ids)
 
 
-st.title("🌱 SaxSSL Bodenschätzung")
+st.title("𓂃↟ 𖠰𓂃 ོ𓂃 Terra Resiliens Bodenschätzung ↟↟𓂃 ོ ☼𓂃↟ 𖠰𓂃 ོ𓂃")
 st.caption("Schätzung von Bodeneigenschaften aus MIR-Spektren (Bruker Alpha II, DRIFT). "
-           "Lokale Bibliotheken: SaxSSL (Boden-Dauerbeobachtung Sachsen) und SaxTox "
-           "(belastete Auenböden, Schwermetalle & PAK). "
-           "Zum Vergleich: Open Soil Spectral Library (OSSL, KSSL/USA).")
+           "Regionale Bibliotheken: SaxSSL (Boden-Dauerbeobachtung Sachsen, Adam et al. 2025) und SaxTox "
+           "(Schwermetalle & PAK). Moor-Spezifische Bibliothek pmird (Teickner and Knorr 2025)."
+           "Zum Vergleich: Open Soil Spectral Library (OSSL, KSSL/USA, Safanelli et al. 2025).")
 
 if not MANIFEST.exists():
     st.error(f"Modelle fehlen: `{MANIFEST}`. Repository vollständig klonen (Ordner `models/`).")
@@ -170,7 +169,7 @@ with tab_res:
     if organic and "Torf (pmird)" not in sources:
         st.info(f"🌿 {', '.join(organic)}: Corg > 12 % — vermutlich organische Probe/Torf. "
                 "Die Mineralboden-Modelle gelten bis ~15 % C; in der Seitenleiste "
-                "**🌿 Torf (pmird)** aktivieren.")
+                "**෴෴ Torf (pmird) ෴** aktivieren.")
     table = result_table(res, targets, with_interval=with_iv)
     st.dataframe(table, hide_index=True, use_container_width=True,
                  height=min(38 + 35 * len(table), 900),
@@ -187,7 +186,7 @@ with tab_res:
     long = res.drop(columns=["ampel", "threshold"], errors="ignore")
     stamp = date.today().isoformat()
     c1, c2 = st.columns(2)
-    c1.download_button("⬇️ CSV (Werte)", num.to_csv(index=False).encode("utf-8-sig"),
+    c1.download_button("⬇ CSV (Werte)", num.to_csv(index=False).encode("utf-8-sig"),
                        f"bodenschaetzung_{stamp}.csv", "text/csv")
     buf = io.BytesIO()
     with pd.ExcelWriter(buf, engine="openpyxl") as xw:
@@ -197,7 +196,7 @@ with tab_res:
         ad_summary(res).to_excel(xw, sheet_name="Plausibilitaet")
         file_map.to_excel(xw, sheet_name="Dateien", index=False)
         models.to_excel(xw, sheet_name="Modelle", index=False)
-    c2.download_button("⬇️ Excel (alle Tabellen)", buf.getvalue(),
+    c2.download_button("⬇ Excel (alle Tabellen)", buf.getvalue(),
                        f"bodenschaetzung_{stamp}.xlsx",
                        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
 
