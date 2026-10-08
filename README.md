@@ -16,7 +16,7 @@ Bodeneigenschaften herunterladen. Grundlage sind die sächsischen Bodenspektralb
 
 - 📂 **Beliebig viele `.0`-Dateien** hochladen; Wiederholungsmessungen (`Probe7-1.0`, `Probe7-2.0`, …) werden automatisch gemittelt
 - 📊 **Rund 30 Eigenschaften**: Kohlenstoff & Stickstoff, Textur, pH, KAK, Eisenoxide, Nährstoffe, Schwermetalle, PAK
-- 🎯 **Ehrliche Unsicherheit**: ~68-%-Intervall aus unabhängigen Testfehlern und Güteklasse 🟢🟡🟠🔴 für jede Eigenschaft
+- 🎯 **Ehrliche Unsicherheit**: ~68-%-Intervall aus Kreuzvalidierungsfehlern, breiter für untypische Spektren; Güteklasse 🟢🟡🟠🔴 je Eigenschaft
 - ⚠️ **Ähnlichkeit zur Bibliothek**: Ampel je Probe ganz oben in der Ergebnistabelle
 - 🌿 **Torfmodus** für organische Proben (wird ab geschätztem Corg > 12 % vorgeschlagen)
 - 🌍 **OSSL/KSSL-Vergleich**: Schätzungen des US-Modells daneben
@@ -69,6 +69,7 @@ models/library/        SaxSSL+SaxTox- und Torfmodelle, manifest.json, metrics.cs
 models/ossl/           OSSL/KSSL-Modelle
 beispiele/             Beispielspektren
 tests/                 End-to-End-Test  →  pip install pytest && pytest
+tools/strip_models.py  entfernt Probendaten aus den Modelldateien (vor jedem Commit)
 ```
 
 <details>
@@ -79,6 +80,7 @@ Trainiert wird im vollständigen `soilspec`-Paket (`scripts/rebuild_models.py`),
 ```bash
 SRC=<Pfad zum soilspec-Projekt>/models
 rsync -a --delete --exclude 'dataset_*' --exclude metrics_detail.json $SRC/library $SRC/ossl models/
+python tools/strip_models.py   # Testset-Daten (Proben-IDs, Laborwerte) aus den Modellen entfernen
 pytest
 ```
 

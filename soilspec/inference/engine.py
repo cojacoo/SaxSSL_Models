@@ -191,17 +191,6 @@ class PredictionEngine:
                 Xr = resample_spectra(X[finite_rows], wn, grid, coverage_tol=grid_tol)
                 Xp = bundle["preprocessor"].transform(Xr)
                 pred = np.asarray(bundle["model"].predict(Xp), dtype=float)
-                q = (entry.conformal or {}).get("q")
-                if entry.log_transform:
-                    values[finite_rows] = np.expm1(pred)
-                    if q is not None:
-                        lo[finite_rows] = np.expm1(pred - q)
-                        hi[finite_rows] = np.expm1(pred + q)
-                else:
-                    values[finite_rows] = pred
-                    if q is not None:
-                        lo[finite_rows] = pred - q
-                        hi[finite_rows] = pred + q
 
             ad_ok = np.full(n, np.nan)
             t2_ratio = np.full(n, np.nan)
@@ -213,6 +202,19 @@ class PredictionEngine:
                     ad_ok[finite_rows] = (ratio <= 1.0).astype(float)
                 except ValueError:
                     ad_note = "AD nicht bewertbar (Gitterabdeckung unzureichend)"
+
+            if finite_rows.any():
+                h = _half_width(entry.conformal, t2_ratio[finite_rows])
+                if entry.log_transform:
+                    values[finite_rows] = np.expm1(pred)
+                    if h is not None:
+                        lo[finite_rows] = np.expm1(pred - h)
+                        hi[finite_rows] = np.expm1(pred + h)
+                else:
+                    values[finite_rows] = pred
+                    if h is not None:
+                        lo[finite_rows] = pred - h
+                        hi[finite_rows] = pred + h
 
             thr = (entry.screening_threshold or {}).get("value")
             for i in range(n):
@@ -258,6 +260,24 @@ class PredictionEngine:
         Xp = art["preprocessor"].transform(Xr)
         det = art["detector"]
         return det.score_samples(Xp) / det.threshold_
+
+
+def _half_width(conformal: dict | None, ratio: np.ndarray):
+    """Interval half-width (model scale) per sample.
+
+    Normalized conformal (Lei et al. 2018) when the manifest carries a
+    calibration ``norm = {a0, b, floor, qn}``: expected |error| grows linearly
+    with the spectral dissimilarity d = T²/T²krit, sigma(d) = max(a0 + b*d, floor),
+    half-width = qn * sigma(d). Otherwise (or d unknown) the constant q.
+    """
+    c = conformal or {}
+    q, nrm = c.get("q"), c.get("norm")
+    if nrm is None:
+        return q
+    # ponytail: linear sigma(d) also extrapolates beyond the calibrated d range;
+    # the 🔴 similarity flag covers that region
+    s = np.maximum(nrm["a0"] + nrm["b"] * ratio, nrm["floor"])
+    return np.where(np.isfinite(ratio), nrm["qn"] * s, q if q is not None else np.nan)
 
 
 def _fill_nan_gaps(

@@ -211,12 +211,15 @@ MIR-Spektrum voraus. Es sind **Schätzungen**, keine Laboranalysen.
 Grundlage: RPIQ an einem unabhängigen Testset.
 
 **Intervall [von–bis]** Aus den Fehlern des Modells an Proben, die es beim Training *nicht*
-gesehen hat (Testset und 5-fache Kreuzvalidierung, der ungünstigere Wert): 68 % dieser
-Fehler waren kleiner als die halbe Intervallbreite. Damit ist es eine Eigenschaft von Modell
-und Daten, keine pauschale Marge. Bei logarithmisch modellierten Größen (Kohlenstoff,
-Stickstoff, Metalle) ist es relativ und wächst mit dem Wert. Es ist aber für jede Probe
-gleich breit gerechnet: Eine untypische Probe bekommt kein breiteres Intervall – dafür
-steht die Zeile **Ähnlichkeit zur Bibliothek**.
+gesehen hat (5-fache Kreuzvalidierung und Testset, der ungünstigere Wert): ~68 % der
+Laborwerte liegen im Intervall. Es ist eine Eigenschaft von Modell und Daten, keine
+pauschale Marge, und es berücksichtigt die **Ähnlichkeit zur Bibliothek**: In der
+Kreuzvalidierung wurde gemessen, wie stark der Fehler mit der Unähnlichkeit des Spektrums
+wächst; untypische Proben bekommen entsprechend breitere Intervalle (normalisierte
+Conformal Prediction, Lei et al. 2018). Bei logarithmisch modellierten Größen (Kohlenstoff,
+Stickstoff, Metalle) ist das Intervall relativ und wächst mit dem Wert. Für 🔴-Proben liegt
+die Unähnlichkeit jenseits dessen, was kalibriert werden konnte – dort ist auch das
+Intervall nur ein Anhaltspunkt. OSSL/KSSL-Intervalle sind konstant breit.
 
 **Ähnlichkeit zur Bibliothek** Hotelling-T² des Spektrums im Hauptkomponentenraum der
 Trainingsspektren, geteilt durch das 99. Perzentil der Bibliothek: 🟢 ≤ 1 ähnlich ·
