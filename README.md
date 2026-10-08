@@ -1,78 +1,90 @@
-# SaxSSL Bodenschätzung
+# 🌱 SaxSSL Bodenschätzung
 
-Bodeneigenschaften aus MIR-Spektren (Bruker Alpha II, DRIFT) schätzen.
-OPUS-Dateien (`.0`, `.1`, …) hochladen → eine Tabelle pro Probe mit Schätzungen der
-sächsischen Spektralbibliothek (**SaxSSL + Hannah**), optional **Torfmodellen (pmird)**
-und **OSSL (KSSL, USA)** zum Vergleich. Jede Schätzung hat ein ~68-%-Intervall, eine
-Güteklasse und eine Prüfung, ob das Spektrum zur Bibliothek passt (⚠). Download als CSV/Excel.
+**Bodeneigenschaften aus MIR-Spektren – in Sekunden statt Laborwochen.**
 
-## Installation und Start
+OPUS-Dateien eines Bruker Alpha II (DRIFT) hochladen, Tabelle mit geschätzten
+Bodeneigenschaften herunterladen. Grundlage ist die sächsische Bodenspektralbibliothek
+**SaxSSL**, zum Vergleich daneben die globale **OSSL**.
 
-Python 3.12 empfohlen.
+![Python](https://img.shields.io/badge/python-3.12-blue)
+![Streamlit](https://img.shields.io/badge/app-Streamlit-FF4B4B)
+![License](https://img.shields.io/badge/license-MIT-green)
+
+---
+
+## Was die App kann
+
+- 📂 **Beliebig viele `.0`-Dateien** hochladen; Wiederholungsmessungen (`Probe7-1.0`, `Probe7-2.0`, …) werden automatisch gemittelt
+- 📊 **Rund 30 Eigenschaften**: Kohlenstoff & Stickstoff, Textur, pH, KAK, Eisenoxide, Nährstoffe, Schwermetalle, PAK
+- 🎯 **Ehrliche Unsicherheit**: ~68-%-Intervall und Güteklasse A–D für jeden Wert
+- ⚠️ **Plausibilitätsprüfung**: Warnung, wenn ein Spektrum nicht zur Bibliothek passt
+- 🌿 **Torfmodus** für organische Proben (wird ab geschätztem Corg > 12 % vorgeschlagen)
+- 🌍 **OSSL-Vergleich**: Schätzungen des US-Modells (KSSL) daneben
+- 💾 **Export** als CSV oder Excel
+
+## Schnellstart
 
 ```bash
 git clone https://github.com/cojacoo/SaxSSL_Models.git
 cd SaxSSL_Models
-python -m venv .venv
-source .venv/bin/activate          # Windows: .venv\Scripts\activate
+python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 streamlit run app.py
 ```
 
-Der Browser öffnet sich unter <http://localhost:8501>. Zum Ausprobieren die Dateien
-aus `beispiele/` hochladen (2 Proben × 4 Wiederholungen).
+Zum Ausprobieren: die Dateien aus [`beispiele/`](beispiele) hochladen (2 Proben × 4 Wiederholungen).
 
-## Bedienung
+## Modellgüte
 
-- **Wiederholungsmessungen** `Probe7-1.0`, `Probe7-2.0`, … werden zur Probe `Probe7`
-  gemittelt (Endung und `-<1–2 Ziffern>` samt allem danach werden abgeschnitten;
-  Unterstriche bleiben: `Profil_2.0` → `Profil_2`). Die Zuordnung Datei → Probe wird
-  angezeigt und mit exportiert.
-- **Seitenleiste:** Eigenschaftsgruppen, 🌿 Torfmodelle (aus; die App schlägt sie vor,
-  wenn Corg > 12 % geschätzt wird), OSSL ein/aus, Klasse-D-Modelle ein/aus, Intervall ein/aus.
+Klassen nach RPIQ auf einem unabhängigen Testset · alle Kennzahlen in [`models/library/metrics.csv`](models/library/metrics.csv)
 
-## Modelle und Güte
+| | Mineralböden (SaxSSL + Hannah) |
+|:-:|---|
+| 🟢 **A** | Corg, Ct, Nt, TOC, TOC400, ROC · Ton, Schluff, Sand · pH (CaCl₂) · Fe_d · P (Königswasser) |
+| 🔵 **B** | KAK pot. · Fe_o · Trockenrohdichte · Cr, Ni, Zn |
+| 🟡 **C** | C/N · TIC900 · KAK eff. · P₂O₅ (CAL) · Mg (CaCl₂) · Cu · Benzo(a)pyren, PAK16 |
+| ⚪ **D** | ausgeblendet: CaCO₃, K₂O (CAL), K, Mg, As, Cd, Hg, Pb (Königswasser) |
 
-Alle Kennzahlen: `models/library/metrics.csv`. Güte nach RPIQ auf einem
-Kennard-Stone-Testset:
+**Torf** (pmird): Nt, C/N (A) · **OSSL-KSSL**: 11 Modelle (Achtung: USDA-Sandgrenze 50 µm)
 
-| Klasse | SaxSSL + Hannah (Mineralböden) |
+> **Gut zu wissen:** Schwermetalle und PAK haben kein eigenes MIR-Signal. Sie werden
+> indirekt über organische Substanz, Ton und Eisenoxide geschätzt – gut fürs Screening,
+> kein Ersatz für die Laboranalyse.
+
+## Daten
+
+| Quelle | Inhalt |
 |---|---|
-| A (RPIQ ≥ 2,5) | Corg, Ct, Nt, TOC, TOC400, ROC, Ton, Schluff, Sand, pH (CaCl₂), Fe_d, P (Königswasser) |
-| B (≥ 1,9) | KAK pot., Fe_o, Trockenrohdichte, Cr, Ni, Zn (Königswasser) |
-| C (≥ 1,4, Screening) | C/N, TIC900, KAK eff., P₂O₅ (CAL), Mg (CaCl₂), Cu, Benzo(a)pyren, PAK16 |
-| D (ausgeblendet) | CaCO₃, K₂O (CAL), K/Mg/As/Cd/Hg/Pb (Königswasser) |
-
-Torf (pmird): Nt und C/N Klasse A. OSSL-KSSL: 11 Modelle (Corg, Ct, Nt, Ton, Schluff,
-Sand (USDA-Grenze 50 µm!), pH, KAK, CaCO₃, Fe_d, Trockenrohdichte).
-
-Schwermetalle und PAK haben kein eigenes MIR-Signal; sie werden indirekt über
-Trägerphasen (organische Substanz, Ton, Fe-Oxide) geschätzt. Diese Werte eignen sich
-zum Screening, nicht als Analysenersatz.
+| **SaxSSL** – Adam, Julich, Benning & Jackisch (2026), [doi:10.1594/PANGAEA.984699](https://doi.org/10.1594/PANGAEA.984699) | Sächsische Boden-Dauerbeobachtung, Alpha II DRIFT + Labordaten |
+| **Hannah** – MSc-Arbeit TU Bergakademie Freiberg | Rückstellproben mit Schwermetallen und PAK |
+| **pmird** – Teickner & Knorr (2026), [doi:10.5194/soil-12-497-2026](https://doi.org/10.5194/soil-12-497-2026) | Torf-MIR-Datenbank |
+| **OSSL** – [soilspectroscopy.org](https://soilspectroscopy.org) | KSSL-Ausschnitt der Open Soil Spectral Library |
 
 ## Aufbau
 
-| Pfad | Inhalt |
-|---|---|
-| `app.py`, `tables.py` | Streamlit-App und Tabellenfunktionen |
-| `soilspec/` | minimaler Laufzeit-Ausschnitt des `soilspec`-Pakets (OPUS lesen, Vorverarbeitung, Vorhersage) |
-| `models/library/` | SaxSSL+Hannah- und Torfmodelle, `manifest.json`, `metrics.csv` |
-| `models/ossl/` | OSSL-KSSL-Modelle |
-| `beispiele/` | Beispielspektren aus der SaxSSL |
-| `tests/test_app.py` | End-to-End-Test (`pip install pytest && pytest`) |
+```
+app.py · tables.py     Streamlit-App
+soilspec/              schlanker Laufzeitkern (OPUS lesen, Vorverarbeitung, Vorhersage)
+models/library/        SaxSSL+Hannah- und Torfmodelle, manifest.json, metrics.csv
+models/ossl/           OSSL-KSSL-Modelle
+beispiele/             Beispielspektren
+tests/                 End-to-End-Test  →  pip install pytest && pytest
+```
 
-Die Versionen in `requirements.txt` sind fest, weil die Modelle mit genau diesen
-Versionen gespeichert wurden.
+<details>
+<summary><b>Für Betreuende: Modelle aktualisieren</b></summary>
 
-## Modelle aktualisieren (Betreuende)
-
-Trainiert wird im vollständigen Paket (`Hannah_Spec/soilspec`,
-`scripts/rebuild_models.py`). Danach die Modelle hierher kopieren:
+Trainiert wird im vollständigen `soilspec`-Paket (`scripts/rebuild_models.py`), dann:
 
 ```bash
 rsync -a --delete --exclude 'dataset_*' ../Hannah_Spec/models/library ../Hannah_Spec/models/ossl models/
 pytest
 ```
 
-Bei Paket-Updates auch `soilspec/` abgleichen (gleiche Dateien wie im vollständigen
-Paket) und die Versionen in `requirements.txt` prüfen.
+Die festen Versionen in `requirements.txt` gehören zu den gespeicherten Modellen –
+nur zusammen mit einem Neutraining ändern.
+</details>
+
+---
+
+MIT-Lizenz · TU Bergakademie Freiberg
