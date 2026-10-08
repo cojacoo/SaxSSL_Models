@@ -11,8 +11,8 @@ Güteklasse und eine Prüfung, ob das Spektrum zur Bibliothek passt (⚠). Downl
 Python 3.12 empfohlen.
 
 ```bash
-git clone <repo-url> saxssl-bodenschaetzung
-cd saxssl-bodenschaetzung
+git clone https://github.com/cojacoo/SaxSSL_Models.git
+cd SaxSSL_Models
 python -m venv .venv
 source .venv/bin/activate          # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
