@@ -63,7 +63,7 @@ Klassen nach RPIQ auf einem unabhängigen Testset · alle Kennzahlen in [`models
 ## Aufbau
 
 ```
-app.py · tables.py     Streamlit-App
+app.py · app_tables.py Streamlit-App
 soilspec/              schlanker Laufzeitkern (OPUS lesen, Vorverarbeitung, Vorhersage)
 models/library/        SaxSSL+SaxTox- und Torfmodelle, manifest.json, metrics.csv
 models/ossl/           OSSL/KSSL-Modelle

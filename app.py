@@ -29,7 +29,7 @@ if str(HERE) not in sys.path:
 
 from soilspec.inference.engine import PredictionEngine  # noqa: E402
 from soilspec.io import read_opus  # noqa: E402
-from tables import (AD_ROW, QUALITY_DOT, ad_summary, average_replicates,  # noqa: E402
+from app_tables import (AD_ROW, QUALITY_DOT, ad_summary, average_replicates,  # noqa: E402
                     label_from_filename, result_table)
 
 MANIFEST = HERE / "models" / "library" / "manifest.json"

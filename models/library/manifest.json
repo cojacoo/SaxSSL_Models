@@ -257,7 +257,14 @@
     "q": 0.0873,
     "scale": "log1p",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 0.058248,
+     "b": 0.045354,
+     "floor": 0.004689,
+     "qn": 1.3077,
+     "d_max": 4.43
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_mineral.joblib",
@@ -300,7 +307,14 @@
     "q": 0.0663,
     "scale": "log1p",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 0.034761,
+     "b": 0.05572,
+     "floor": 0.003272,
+     "qn": 1.4284,
+     "d_max": 3.9
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_mineral.joblib",
@@ -343,7 +357,14 @@
     "q": 0.0247,
     "scale": "log1p",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 0.014954,
+     "b": 0.011732,
+     "floor": 0.001163,
+     "qn": 1.4204,
+     "d_max": 3.79
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_mineral.joblib",
@@ -386,7 +407,14 @@
     "q": 0.124,
     "scale": "log1p",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 0.075395,
+     "b": 0.064464,
+     "floor": 0.005879,
+     "qn": 1.39,
+     "d_max": 4.07
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_mineral.joblib",
@@ -428,7 +456,14 @@
     "q": 0.05,
     "scale": "log1p",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 0.016108,
+     "b": 0.071743,
+     "floor": 0.00254,
+     "qn": 1.712,
+     "d_max": 3.98
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_mineral.joblib",
@@ -470,7 +505,14 @@
     "q": 0.0473,
     "scale": "log1p",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 0.017562,
+     "b": 0.058814,
+     "floor": 0.002447,
+     "qn": 1.6725,
+     "d_max": 3.98
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_mineral.joblib",
@@ -512,7 +554,14 @@
     "q": 0.0242,
     "scale": "log1p",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 0.013124,
+     "b": 0.022124,
+     "floor": 0.001306,
+     "qn": 1.3625,
+     "d_max": 3.98
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_mineral.joblib",
@@ -554,7 +603,14 @@
     "q": 0.0105,
     "scale": "log1p",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 0.006149,
+     "b": 0.007308,
+     "floor": 0.000579,
+     "qn": 1.3734,
+     "d_max": 3.98
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_mineral.joblib",
@@ -597,7 +653,14 @@
     "q": 0.1122,
     "scale": "log1p",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 0.084054,
+     "b": 0.131888,
+     "floor": 0.007827,
+     "qn": 1.0925,
+     "d_max": 3.51
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_mineral.joblib",
@@ -640,7 +703,14 @@
     "q": 2.7586,
     "scale": "linear",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 2.267502,
+     "b": 1.11847,
+     "floor": 0.1752,
+     "qn": 1.1316,
+     "d_max": 3.3
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_mineral.joblib",
@@ -683,7 +753,14 @@
     "q": 7.4466,
     "scale": "linear",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 4.367437,
+     "b": 4.923087,
+     "floor": 0.373837,
+     "qn": 1.4741,
+     "d_max": 3.29
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_mineral.joblib",
@@ -726,7 +803,14 @@
     "q": 7.5004,
     "scale": "linear",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 4.510716,
+     "b": 6.882532,
+     "floor": 0.423588,
+     "qn": 1.3419,
+     "d_max": 3.29
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_mineral.joblib",
@@ -769,7 +853,14 @@
     "q": 0.2254,
     "scale": "linear",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 0.136665,
+     "b": 0.087017,
+     "floor": 0.011444,
+     "qn": 1.5,
+     "d_max": 5.0
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_mineral.joblib",
@@ -811,7 +902,14 @@
     "q": 0.1401,
     "scale": "log1p",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 0.094616,
+     "b": 0.046351,
+     "floor": 0.00561,
+     "qn": 1.3513,
+     "d_max": 3.9
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_mineral.joblib",
@@ -853,7 +951,14 @@
     "q": 0.1658,
     "scale": "log1p",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 0.136849,
+     "b": 0.061444,
+     "floor": 0.009112,
+     "qn": 1.0646,
+     "d_max": 1.35
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_mineral.joblib",
@@ -895,7 +1000,14 @@
     "q": 0.0501,
     "scale": "log1p",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 0.029523,
+     "b": 0.036978,
+     "floor": 0.002489,
+     "qn": 1.3065,
+     "d_max": 3.79
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_mineral.joblib",
@@ -937,7 +1049,14 @@
     "q": 0.0363,
     "scale": "log1p",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 0.027783,
+     "b": 0.009165,
+     "floor": 0.001969,
+     "qn": 1.2203,
+     "d_max": 3.79
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_mineral.joblib",
@@ -979,7 +1098,14 @@
     "q": 0.1604,
     "scale": "linear",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 0.136604,
+     "b": 0.026159,
+     "floor": 0.009528,
+     "qn": 1.1289,
+     "d_max": 2.47
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_mineral.joblib",
@@ -1021,7 +1147,14 @@
     "q": 0.4306,
     "scale": "log1p",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 0.303107,
+     "b": 0.043003,
+     "floor": 0.022643,
+     "qn": 1.3815,
+     "d_max": 5.93
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_mineral.joblib",
@@ -1063,7 +1196,14 @@
     "q": 0.5922,
     "scale": "log1p",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 0.360797,
+     "b": 0.261639,
+     "floor": 0.033601,
+     "qn": 1.4186,
+     "d_max": 5.93
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_mineral.joblib",
@@ -1105,7 +1245,14 @@
     "q": 0.3255,
     "scale": "log1p",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 0.145639,
+     "b": 0.194152,
+     "floor": 0.012764,
+     "qn": 1.742,
+     "d_max": 4.0
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_mineral.joblib",
@@ -1148,7 +1295,14 @@
     "q": 0.2234,
     "scale": "log1p",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 0.137817,
+     "b": 0.197372,
+     "floor": 0.011135,
+     "qn": 1.283,
+     "d_max": 3.9
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_mineral.joblib",
@@ -1191,7 +1345,14 @@
     "q": 0.8729,
     "scale": "log1p",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 0.811612,
+     "b": 1.093761,
+     "floor": 0.032578,
+     "qn": 0.8531,
+     "d_max": 3.9
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_mineral.joblib",
@@ -1234,7 +1395,14 @@
     "q": 0.7936,
     "scale": "log1p",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 0.744426,
+     "b": 1.132456,
+     "floor": 0.023527,
+     "qn": 0.815,
+     "d_max": 3.9
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_mineral.joblib",
@@ -1277,7 +1445,14 @@
     "q": 0.5165,
     "scale": "log1p",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 0.276035,
+     "b": 0.132865,
+     "floor": 0.016299,
+     "qn": 1.7367,
+     "d_max": 4.05
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_mineral.joblib",
@@ -1320,7 +1495,14 @@
     "q": 0.3373,
     "scale": "log1p",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 0.161369,
+     "b": 0.108796,
+     "floor": 0.008723,
+     "qn": 1.8962,
+     "d_max": 4.05
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_mineral.joblib",
@@ -1363,7 +1545,14 @@
     "q": 0.1828,
     "scale": "log1p",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 0.1043,
+     "b": 0.172502,
+     "floor": 0.009366,
+     "qn": 1.4032,
+     "d_max": 4.05
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_mineral.joblib",
@@ -1406,7 +1595,14 @@
     "q": 0.3454,
     "scale": "log1p",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 0.191928,
+     "b": 0.142947,
+     "floor": 0.014305,
+     "qn": 1.6128,
+     "d_max": 4.05
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_mineral.joblib",
@@ -1449,7 +1645,14 @@
     "q": 0.0828,
     "scale": "log1p",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 0.061462,
+     "b": 0.042572,
+     "floor": 0.003092,
+     "qn": 1.2295,
+     "d_max": 4.05
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_mineral.joblib",
@@ -1492,7 +1695,14 @@
     "q": 0.2285,
     "scale": "log1p",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 0.084476,
+     "b": 0.252851,
+     "floor": 0.007937,
+     "qn": 1.852,
+     "d_max": 4.05
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_mineral.joblib",
@@ -1535,7 +1745,14 @@
     "q": 0.4856,
     "scale": "log1p",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 0.259086,
+     "b": 0.164336,
+     "floor": 0.017664,
+     "qn": 1.6841,
+     "d_max": 4.05
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_mineral.joblib",
@@ -1578,7 +1795,14 @@
     "q": 0.4603,
     "scale": "log1p",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 0.210073,
+     "b": 0.193042,
+     "floor": 0.016354,
+     "qn": 1.8144,
+     "d_max": 4.11
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_mineral.joblib",
@@ -1620,7 +1844,14 @@
     "q": 0.7679,
     "scale": "log1p",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 0.459979,
+     "b": 0.060485,
+     "floor": 0.034764,
+     "qn": 1.6366,
+     "d_max": 22.73
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_mineral.joblib",
@@ -1662,7 +1893,14 @@
     "q": 0.8227,
     "scale": "log1p",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 0.500486,
+     "b": 0.023292,
+     "floor": 0.038743,
+     "qn": 1.6303,
+     "d_max": 23.39
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_mineral.joblib",
@@ -1704,7 +1942,14 @@
     "q": 0.0905,
     "scale": "log1p",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 0.018424,
+     "b": 0.297449,
+     "floor": 0.003975,
+     "qn": 1.606,
+     "d_max": 3.24
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_peat.joblib",
@@ -1746,7 +1991,14 @@
     "q": 0.0607,
     "scale": "log1p",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 0.03667,
+     "b": 0.068236,
+     "floor": 0.003287,
+     "qn": 1.2629,
+     "d_max": 4.07
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_peat.joblib",
@@ -1788,7 +2040,14 @@
     "q": 0.1353,
     "scale": "log1p",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 0.066313,
+     "b": 0.159905,
+     "floor": 0.006223,
+     "qn": 1.4821,
+     "d_max": 3.48
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_peat.joblib",
@@ -1830,7 +2089,14 @@
     "q": 5.5541,
     "scale": "linear",
     "alpha": 0.32,
-    "method": "max(KS-Test, 5-fold OOF)"
+    "method": "max(KS-Test, 5-fold OOF)",
+    "norm": {
+     "a0": 1.7063,
+     "b": 2.648626,
+     "floor": 0.061045,
+     "qn": 2.4902,
+     "d_max": 7.62
+    }
    },
    "screening_threshold": null,
    "ad_ref": "ad_peat.joblib",
