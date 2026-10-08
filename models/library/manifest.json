@@ -2,7 +2,7 @@
  "version": 1,
  "created": "2026-10-08",
  "alpha": 0.32,
- "hinweis": "SaxSSL+Hannah = gepoolte lokale Modelle (Kennard-Stone-Test). OSSL = KSSL (USA), USDA-Methoden: Sand/Schluff-Grenze 50 µm statt 63 µm.",
+ "hinweis": "SaxSSL+SaxTox = gepoolte lokale Modelle (Kennard-Stone-Test); sources = Proben je Bibliothek. OSSL = KSSL (USA), USDA-Methoden: Sand/Schluff-Grenze 50 µm statt 63 µm.",
  "targets": [
   {
    "id": "corg",
@@ -216,7 +216,7 @@
   }
  ],
  "model_sets": {
-  "mineral": "SaxSSL+Hannah",
+  "mineral": "SaxSSL+SaxTox",
   "peat": "Torf (pmird)"
  },
  "models": [
@@ -226,8 +226,12 @@
    "display_name": "Corg",
    "unit": "Gew.-%",
    "group": "Kohlenstoff & Stickstoff",
-   "origin": "SaxSSL+Hannah",
+   "origin": "SaxSSL+SaxTox",
    "model_set": "mineral",
+   "sources": {
+    "SaxSSL": 870,
+    "SaxTox": 286
+   },
    "algo": "PLScv",
    "path": "model_mineral_corg_PLScv.joblib",
    "grid": {
@@ -265,8 +269,12 @@
    "display_name": "Gesamt-C",
    "unit": "Gew.-%",
    "group": "Kohlenstoff & Stickstoff",
-   "origin": "SaxSSL+Hannah",
+   "origin": "SaxSSL+SaxTox",
    "model_set": "mineral",
+   "sources": {
+    "SaxSSL": 1360,
+    "SaxTox": 3
+   },
    "algo": "PLScv",
    "path": "model_mineral_ct_PLScv.joblib",
    "grid": {
@@ -304,8 +312,12 @@
    "display_name": "Gesamt-N",
    "unit": "Gew.-%",
    "group": "Kohlenstoff & Stickstoff",
-   "origin": "SaxSSL+Hannah",
+   "origin": "SaxSSL+SaxTox",
    "model_set": "mineral",
+   "sources": {
+    "SaxSSL": 827,
+    "SaxTox": 279
+   },
    "algo": "PLScv",
    "path": "model_mineral_nt_PLScv.joblib",
    "grid": {
@@ -343,8 +355,12 @@
    "display_name": "C/N-Verhältnis",
    "unit": "-",
    "group": "Kohlenstoff & Stickstoff",
-   "origin": "SaxSSL+Hannah",
+   "origin": "SaxSSL+SaxTox",
    "model_set": "mineral",
+   "sources": {
+    "SaxSSL": 809,
+    "SaxTox": 279
+   },
    "algo": "Cubist",
    "path": "model_mineral_cn_Cubist.joblib",
    "grid": {
@@ -382,8 +398,11 @@
    "display_name": "TOC (soliTOC)",
    "unit": "Gew.-%",
    "group": "Kohlenstoff & Stickstoff",
-   "origin": "SaxSSL+Hannah",
+   "origin": "SaxSSL+SaxTox",
    "model_set": "mineral",
+   "sources": {
+    "SaxSSL": 1357
+   },
    "algo": "PLScv",
    "path": "model_mineral_toc_PLScv.joblib",
    "grid": {
@@ -421,8 +440,11 @@
    "display_name": "TOC400 (labiler C)",
    "unit": "Gew.-%",
    "group": "Kohlenstoff & Stickstoff",
-   "origin": "SaxSSL+Hannah",
+   "origin": "SaxSSL+SaxTox",
    "model_set": "mineral",
+   "sources": {
+    "SaxSSL": 1357
+   },
    "algo": "PLScv",
    "path": "model_mineral_toc400_PLScv.joblib",
    "grid": {
@@ -460,8 +482,11 @@
    "display_name": "ROC (resistenter C)",
    "unit": "Gew.-%",
    "group": "Kohlenstoff & Stickstoff",
-   "origin": "SaxSSL+Hannah",
+   "origin": "SaxSSL+SaxTox",
    "model_set": "mineral",
+   "sources": {
+    "SaxSSL": 1357
+   },
    "algo": "PLScv",
    "path": "model_mineral_roc_PLScv.joblib",
    "grid": {
@@ -499,8 +524,11 @@
    "display_name": "TIC900 (anorg. C)",
    "unit": "Gew.-%",
    "group": "Kohlenstoff & Stickstoff",
-   "origin": "SaxSSL+Hannah",
+   "origin": "SaxSSL+SaxTox",
    "model_set": "mineral",
+   "sources": {
+    "SaxSSL": 1357
+   },
    "algo": "PLScv",
    "path": "model_mineral_tic900_PLScv.joblib",
    "grid": {
@@ -538,8 +566,12 @@
    "display_name": "CaCO3",
    "unit": "Gew.-%",
    "group": "Kohlenstoff & Stickstoff",
-   "origin": "SaxSSL+Hannah",
+   "origin": "SaxSSL+SaxTox",
    "model_set": "mineral",
+   "sources": {
+    "SaxSSL": 651,
+    "SaxTox": 91
+   },
    "algo": "PLScv",
    "path": "model_mineral_caco3_PLScv.joblib",
    "grid": {
@@ -577,8 +609,12 @@
    "display_name": "Ton",
    "unit": "Gew.-%",
    "group": "Textur",
-   "origin": "SaxSSL+Hannah",
+   "origin": "SaxSSL+SaxTox",
    "model_set": "mineral",
+   "sources": {
+    "SaxSSL": 614,
+    "SaxTox": 279
+   },
    "algo": "Cubist",
    "path": "model_mineral_ton_Cubist.joblib",
    "grid": {
@@ -616,8 +652,12 @@
    "display_name": "Schluff",
    "unit": "Gew.-%",
    "group": "Textur",
-   "origin": "SaxSSL+Hannah",
+   "origin": "SaxSSL+SaxTox",
    "model_set": "mineral",
+   "sources": {
+    "SaxSSL": 579,
+    "SaxTox": 279
+   },
    "algo": "Cubist",
    "path": "model_mineral_schluff_Cubist.joblib",
    "grid": {
@@ -655,8 +695,12 @@
    "display_name": "Sand",
    "unit": "Gew.-%",
    "group": "Textur",
-   "origin": "SaxSSL+Hannah",
+   "origin": "SaxSSL+SaxTox",
    "model_set": "mineral",
+   "sources": {
+    "SaxSSL": 579,
+    "SaxTox": 279
+   },
    "algo": "Cubist",
    "path": "model_mineral_sand_Cubist.joblib",
    "grid": {
@@ -694,8 +738,12 @@
    "display_name": "pH (CaCl2)",
    "unit": "-",
    "group": "Bodenchemie",
-   "origin": "SaxSSL+Hannah",
+   "origin": "SaxSSL+SaxTox",
    "model_set": "mineral",
+   "sources": {
+    "SaxSSL": 870,
+    "SaxTox": 288
+   },
    "algo": "Cubist",
    "path": "model_mineral_ph_cacl2_Cubist.joblib",
    "grid": {
@@ -733,8 +781,11 @@
    "display_name": "KAK (potentiell)",
    "unit": "cmolc/kg",
    "group": "Bodenchemie",
-   "origin": "SaxSSL+Hannah",
+   "origin": "SaxSSL+SaxTox",
    "model_set": "mineral",
+   "sources": {
+    "SaxSSL": 571
+   },
    "algo": "Cubist",
    "path": "model_mineral_kak_pot_Cubist.joblib",
    "grid": {
@@ -772,8 +823,11 @@
    "display_name": "KAK (effektiv)",
    "unit": "cmolc/kg",
    "group": "Bodenchemie",
-   "origin": "SaxSSL+Hannah",
+   "origin": "SaxSSL+SaxTox",
    "model_set": "mineral",
+   "sources": {
+    "SaxSSL": 219
+   },
    "algo": "Cubist",
    "path": "model_mineral_kak_eff_Cubist.joblib",
    "grid": {
@@ -811,8 +865,11 @@
    "display_name": "Fe (Dithionit)",
    "unit": "Gew.-%",
    "group": "Bodenchemie",
-   "origin": "SaxSSL+Hannah",
+   "origin": "SaxSSL+SaxTox",
    "model_set": "mineral",
+   "sources": {
+    "SaxSSL": 807
+   },
    "algo": "Cubist",
    "path": "model_mineral_fe_d_Cubist.joblib",
    "grid": {
@@ -850,8 +907,11 @@
    "display_name": "Fe (Oxalat)",
    "unit": "Gew.-%",
    "group": "Bodenchemie",
-   "origin": "SaxSSL+Hannah",
+   "origin": "SaxSSL+SaxTox",
    "model_set": "mineral",
+   "sources": {
+    "SaxSSL": 807
+   },
    "algo": "Cubist",
    "path": "model_mineral_fe_o_Cubist.joblib",
    "grid": {
@@ -889,8 +949,11 @@
    "display_name": "Trockenrohdichte",
    "unit": "g/cm³",
    "group": "Bodenphysik",
-   "origin": "SaxSSL+Hannah",
+   "origin": "SaxSSL+SaxTox",
    "model_set": "mineral",
+   "sources": {
+    "SaxSSL": 537
+   },
    "algo": "Cubist",
    "path": "model_mineral_trd_Cubist.joblib",
    "grid": {
@@ -928,8 +991,11 @@
    "display_name": "P2O5 (CAL)",
    "unit": "mg/100g",
    "group": "Nährstoffe",
-   "origin": "SaxSSL+Hannah",
+   "origin": "SaxSSL+SaxTox",
    "model_set": "mineral",
+   "sources": {
+    "SaxSSL": 435
+   },
    "algo": "Cubist",
    "path": "model_mineral_p_cal_Cubist.joblib",
    "grid": {
@@ -967,8 +1033,11 @@
    "display_name": "K2O (CAL)",
    "unit": "mg/100g",
    "group": "Nährstoffe",
-   "origin": "SaxSSL+Hannah",
+   "origin": "SaxSSL+SaxTox",
    "model_set": "mineral",
+   "sources": {
+    "SaxSSL": 435
+   },
    "algo": "Cubist",
    "path": "model_mineral_k_cal_Cubist.joblib",
    "grid": {
@@ -1006,8 +1075,11 @@
    "display_name": "Mg (CaCl2)",
    "unit": "mg/100g",
    "group": "Nährstoffe",
-   "origin": "SaxSSL+Hannah",
+   "origin": "SaxSSL+SaxTox",
    "model_set": "mineral",
+   "sources": {
+    "SaxSSL": 773
+   },
    "algo": "XGBoost",
    "path": "model_mineral_mg_cacl2_XGBoost.joblib",
    "grid": {
@@ -1045,8 +1117,12 @@
    "display_name": "P (Königswasser)",
    "unit": "mg/kg",
    "group": "Nährstoffe",
-   "origin": "SaxSSL+Hannah",
+   "origin": "SaxSSL+SaxTox",
    "model_set": "mineral",
+   "sources": {
+    "SaxSSL": 798,
+    "SaxTox": 127
+   },
    "algo": "Cubist",
    "path": "model_mineral_p_kw_Cubist.joblib",
    "grid": {
@@ -1084,8 +1160,12 @@
    "display_name": "K (Königswasser)",
    "unit": "mg/kg",
    "group": "Nährstoffe",
-   "origin": "SaxSSL+Hannah",
+   "origin": "SaxSSL+SaxTox",
    "model_set": "mineral",
+   "sources": {
+    "SaxSSL": 798,
+    "SaxTox": 127
+   },
    "algo": "Cubist",
    "path": "model_mineral_k_kw_Cubist.joblib",
    "grid": {
@@ -1123,8 +1203,12 @@
    "display_name": "Mg (Königswasser)",
    "unit": "mg/kg",
    "group": "Nährstoffe",
-   "origin": "SaxSSL+Hannah",
+   "origin": "SaxSSL+SaxTox",
    "model_set": "mineral",
+   "sources": {
+    "SaxSSL": 798,
+    "SaxTox": 127
+   },
    "algo": "Cubist",
    "path": "model_mineral_mg_kw_Cubist.joblib",
    "grid": {
@@ -1162,8 +1246,12 @@
    "display_name": "Arsen",
    "unit": "mg/kg",
    "group": "Schwermetalle (Königswasser)",
-   "origin": "SaxSSL+Hannah",
+   "origin": "SaxSSL+SaxTox",
    "model_set": "mineral",
+   "sources": {
+    "SaxSSL": 810,
+    "SaxTox": 288
+   },
    "algo": "XGBoost",
    "path": "model_mineral_as_kw_XGBoost.joblib",
    "grid": {
@@ -1201,8 +1289,12 @@
    "display_name": "Cadmium",
    "unit": "mg/kg",
    "group": "Schwermetalle (Königswasser)",
-   "origin": "SaxSSL+Hannah",
+   "origin": "SaxSSL+SaxTox",
    "model_set": "mineral",
+   "sources": {
+    "SaxSSL": 810,
+    "SaxTox": 288
+   },
    "algo": "XGBoost",
    "path": "model_mineral_cd_kw_XGBoost.joblib",
    "grid": {
@@ -1240,8 +1332,12 @@
    "display_name": "Chrom",
    "unit": "mg/kg",
    "group": "Schwermetalle (Königswasser)",
-   "origin": "SaxSSL+Hannah",
+   "origin": "SaxSSL+SaxTox",
    "model_set": "mineral",
+   "sources": {
+    "SaxSSL": 810,
+    "SaxTox": 288
+   },
    "algo": "Cubist",
    "path": "model_mineral_cr_kw_Cubist.joblib",
    "grid": {
@@ -1279,8 +1375,12 @@
    "display_name": "Kupfer",
    "unit": "mg/kg",
    "group": "Schwermetalle (Königswasser)",
-   "origin": "SaxSSL+Hannah",
+   "origin": "SaxSSL+SaxTox",
    "model_set": "mineral",
+   "sources": {
+    "SaxSSL": 810,
+    "SaxTox": 288
+   },
    "algo": "Cubist",
    "path": "model_mineral_cu_kw_Cubist.joblib",
    "grid": {
@@ -1318,8 +1418,12 @@
    "display_name": "Quecksilber",
    "unit": "mg/kg",
    "group": "Schwermetalle (Königswasser)",
-   "origin": "SaxSSL+Hannah",
+   "origin": "SaxSSL+SaxTox",
    "model_set": "mineral",
+   "sources": {
+    "SaxSSL": 810,
+    "SaxTox": 288
+   },
    "algo": "Cubist",
    "path": "model_mineral_hg_kw_Cubist.joblib",
    "grid": {
@@ -1357,8 +1461,12 @@
    "display_name": "Nickel",
    "unit": "mg/kg",
    "group": "Schwermetalle (Königswasser)",
-   "origin": "SaxSSL+Hannah",
+   "origin": "SaxSSL+SaxTox",
    "model_set": "mineral",
+   "sources": {
+    "SaxSSL": 810,
+    "SaxTox": 288
+   },
    "algo": "Cubist",
    "path": "model_mineral_ni_kw_Cubist.joblib",
    "grid": {
@@ -1396,8 +1504,12 @@
    "display_name": "Blei",
    "unit": "mg/kg",
    "group": "Schwermetalle (Königswasser)",
-   "origin": "SaxSSL+Hannah",
+   "origin": "SaxSSL+SaxTox",
    "model_set": "mineral",
+   "sources": {
+    "SaxSSL": 810,
+    "SaxTox": 288
+   },
    "algo": "XGBoost",
    "path": "model_mineral_pb_kw_XGBoost.joblib",
    "grid": {
@@ -1435,8 +1547,12 @@
    "display_name": "Zink",
    "unit": "mg/kg",
    "group": "Schwermetalle (Königswasser)",
-   "origin": "SaxSSL+Hannah",
+   "origin": "SaxSSL+SaxTox",
    "model_set": "mineral",
+   "sources": {
+    "SaxSSL": 796,
+    "SaxTox": 288
+   },
    "algo": "XGBoost",
    "path": "model_mineral_zn_kw_XGBoost.joblib",
    "grid": {
@@ -1474,8 +1590,11 @@
    "display_name": "Benzo(a)pyren",
    "unit": "µg/kg",
    "group": "Organische Schadstoffe",
-   "origin": "SaxSSL+Hannah",
+   "origin": "SaxSSL+SaxTox",
    "model_set": "mineral",
+   "sources": {
+    "SaxTox": 288
+   },
    "algo": "XGBoost",
    "path": "model_mineral_bap_XGBoost.joblib",
    "grid": {
@@ -1513,8 +1632,11 @@
    "display_name": "PAK (Summe 16 EPA)",
    "unit": "µg/kg",
    "group": "Organische Schadstoffe",
-   "origin": "SaxSSL+Hannah",
+   "origin": "SaxSSL+SaxTox",
    "model_set": "mineral",
+   "sources": {
+    "SaxTox": 288
+   },
    "algo": "XGBoost",
    "path": "model_mineral_pak16_XGBoost.joblib",
    "grid": {
@@ -1554,6 +1676,9 @@
    "group": "Kohlenstoff & Stickstoff",
    "origin": "Torf (pmird)",
    "model_set": "peat",
+   "sources": {
+    "pmird": 1513
+   },
    "algo": "PLScv",
    "path": "model_peat_corg_PLScv.joblib",
    "grid": {
@@ -1593,6 +1718,9 @@
    "group": "Kohlenstoff & Stickstoff",
    "origin": "Torf (pmird)",
    "model_set": "peat",
+   "sources": {
+    "pmird": 1508
+   },
    "algo": "Cubist",
    "path": "model_peat_nt_Cubist.joblib",
    "grid": {
@@ -1632,6 +1760,9 @@
    "group": "Kohlenstoff & Stickstoff",
    "origin": "Torf (pmird)",
    "model_set": "peat",
+   "sources": {
+    "pmird": 1490
+   },
    "algo": "Cubist",
    "path": "model_peat_cn_Cubist.joblib",
    "grid": {
@@ -1671,6 +1802,9 @@
    "group": "Bodenphysik",
    "origin": "Torf (pmird)",
    "model_set": "peat",
+   "sources": {
+    "pmird": 298
+   },
    "algo": "XGBoost",
    "path": "model_peat_loi_XGBoost.joblib",
    "grid": {
@@ -1708,7 +1842,7 @@
    "display_name": "CaCO3",
    "unit": "Gew.-%",
    "group": "Kohlenstoff & Stickstoff",
-   "origin": "OSSL-KSSL",
+   "origin": "OSSL/KSSL",
    "algo": "XGBoost",
    "path": "../ossl/model_caco3_ossl-kssl_XGBoost.joblib",
    "grid": {
@@ -1745,7 +1879,7 @@
    "display_name": "Corg",
    "unit": "Gew.-%",
    "group": "Kohlenstoff & Stickstoff",
-   "origin": "OSSL-KSSL",
+   "origin": "OSSL/KSSL",
    "algo": "XGBoost",
    "path": "../ossl/model_corg_ossl-kssl_XGBoost.joblib",
    "grid": {
@@ -1782,7 +1916,7 @@
    "display_name": "Gesamt-C",
    "unit": "Gew.-%",
    "group": "Kohlenstoff & Stickstoff",
-   "origin": "OSSL-KSSL",
+   "origin": "OSSL/KSSL",
    "algo": "XGBoost",
    "path": "../ossl/model_ct_ossl-kssl_XGBoost.joblib",
    "grid": {
@@ -1819,7 +1953,7 @@
    "display_name": "Fe (Dithionit)",
    "unit": "Gew.-%",
    "group": "Bodenchemie",
-   "origin": "OSSL-KSSL",
+   "origin": "OSSL/KSSL",
    "algo": "XGBoost",
    "path": "../ossl/model_fe_d_ossl-kssl_XGBoost.joblib",
    "grid": {
@@ -1856,7 +1990,7 @@
    "display_name": "KAK (potentiell)",
    "unit": "cmolc/kg",
    "group": "Bodenchemie",
-   "origin": "OSSL-KSSL",
+   "origin": "OSSL/KSSL",
    "algo": "XGBoost",
    "path": "../ossl/model_kak_pot_ossl-kssl_XGBoost.joblib",
    "grid": {
@@ -1893,7 +2027,7 @@
    "display_name": "Gesamt-N",
    "unit": "Gew.-%",
    "group": "Kohlenstoff & Stickstoff",
-   "origin": "OSSL-KSSL",
+   "origin": "OSSL/KSSL",
    "algo": "XGBoost",
    "path": "../ossl/model_nt_ossl-kssl_XGBoost.joblib",
    "grid": {
@@ -1930,7 +2064,7 @@
    "display_name": "pH (CaCl2)",
    "unit": "-",
    "group": "Bodenchemie",
-   "origin": "OSSL-KSSL",
+   "origin": "OSSL/KSSL",
    "algo": "XGBoost",
    "path": "../ossl/model_ph_cacl2_ossl-kssl_XGBoost.joblib",
    "grid": {
@@ -1967,7 +2101,7 @@
    "display_name": "Sand (USDA)",
    "unit": "Gew.-%",
    "group": "Textur",
-   "origin": "OSSL-KSSL",
+   "origin": "OSSL/KSSL",
    "algo": "XGBoost",
    "path": "../ossl/model_sand_ossl-kssl_XGBoost.joblib",
    "grid": {
@@ -2004,7 +2138,7 @@
    "display_name": "Schluff (USDA)",
    "unit": "Gew.-%",
    "group": "Textur",
-   "origin": "OSSL-KSSL",
+   "origin": "OSSL/KSSL",
    "algo": "XGBoost",
    "path": "../ossl/model_schluff_ossl-kssl_XGBoost.joblib",
    "grid": {
@@ -2041,7 +2175,7 @@
    "display_name": "Tongehalt",
    "unit": "Gew.-%",
    "group": "Textur",
-   "origin": "OSSL-KSSL",
+   "origin": "OSSL/KSSL",
    "algo": "XGBoost",
    "path": "../ossl/model_ton_ossl-kssl_XGBoost.joblib",
    "grid": {
@@ -2078,7 +2212,7 @@
    "display_name": "Trockenrohdichte",
    "unit": "g/cm³",
    "group": "Bodenphysik",
-   "origin": "OSSL-KSSL",
+   "origin": "OSSL/KSSL",
    "algo": "XGBoost",
    "path": "../ossl/model_trd_ossl-kssl_XGBoost.joblib",
    "grid": {

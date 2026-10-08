@@ -1,7 +1,7 @@
 """
 PredictionEngine — manifest-driven inference over pretrained model bundles.
 
-Bundles are the plain-dict joblib format used by the Hannah/saxSSL training
+Bundles are the plain-dict joblib format used by the SaxSSL/SaxTox training
 scripts and notebooks:
 
     {'model': <fitted wrapper>, 'preprocessor': <fitted Preprocessor>,

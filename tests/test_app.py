@@ -27,10 +27,15 @@ def test_upload_table(monkeypatch):
     assert not at.exception, [e.value for e in at.exception]
     assert any(f"{len(files)} Dateien → 2 Proben" in s.value for s in at.success)
 
-    wide = at.dataframe[0].value
-    assert list(wide.index) == ["BDF-LAAB", "BDF-LAAC"]
-    assert any("OSSL" in c for c in wide.columns) and any("SaxSSL" in c for c in wide.columns)
+    tab = at.dataframe[0].value                        # rows = properties, cols = samples
+    assert list(tab.columns) == ["Eigenschaft", "Quelle", "BDF-LAAB", "BDF-LAAC"]
+    assert list(tab["Eigenschaft"][:2]) == ["Ähnlichkeit zur Bibliothek"] * 2
+    assert list(tab["Quelle"][:2]) == ["SaxSSL+SaxTox", "OSSL/KSSL"]
+    assert tab.iloc[0, 2][0] in "🟢🟠🔴"                # similarity as traffic light
+    assert tab["Eigenschaft"][2:].str[0].isin(list("🟢🟡🟠")).all()   # quality dots, no D
+    assert {"SaxSSL", "SaxSSL+SaxTox", "SaxTox", "OSSL/KSSL"} <= set(tab["Quelle"])
+    assert not tab.astype(str).apply(lambda c: c.str.contains("annah")).any().any()
 
     at.sidebar.checkbox[0].check().run()               # peat models on
     assert not at.exception
-    assert any("Torf" in c for c in at.dataframe[0].value.columns)
+    assert "Torf (pmird)" in set(at.dataframe[0].value["Quelle"])
