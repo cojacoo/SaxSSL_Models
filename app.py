@@ -88,7 +88,11 @@ with st.sidebar:
     use_ossl = st.checkbox("OSSL/KSSL-Vergleich (USA)", value=True)
     sources = (["SaxSSL+SaxTox"] + (["Torf (pmird)"] if peat else [])
                + (["OSSL/KSSL"] if use_ossl else []))
-    show_d = st.checkbox("Auch unzuverlässige Modelle (Klasse D) zeigen", value=False)
+    min_class = st.select_slider(
+        "Mindestgüte der Modelle", options=["A", "B", "C", "D"], value="C",
+        format_func=lambda c: f"{QUALITY_DOT[c]} {c}",
+        help="Nur Modelle dieser Güteklasse oder besser zeigen. "
+             "A gut · B brauchbar · C Screening · D unzuverlässig.")
     with_iv = st.checkbox("Unsicherheitsintervall anzeigen (~68 %)", value=True)
     avg = st.checkbox("Wiederholungsmessungen je Probe mitteln", value=True,
                       help="Dateien wie 'Probe7-1.0', 'Probe7-2.0' werden zu 'Probe7' gemittelt "
@@ -126,7 +130,7 @@ st.success(f"{len(files)} Dateien → {len(names)} Proben.")
 
 # ---------------------------------------------------------------- predict
 use = models[models["group"].isin(sel_groups) & models["origin"].isin(sources)
-             & (models["enabled"] | show_d)]
+             & (models["quality_class"] <= min_class)]   # "A" < "B" < "C" < "D"
 if use.empty:
     st.warning("Keine Modelle für diese Auswahl – Eigenschaftsgruppen und Modellquellen "
                "in der Seitenleiste prüfen.")
@@ -192,7 +196,7 @@ with tab_models:
     show = models.assign(Güte=models["quality_class"].map(QUALITY),
                          Quelle=models["model_id"].map(SOURCES))
     st.dataframe(show[["group", "display_name", "unit", "Quelle", "algo", "R2", "RMSE",
-                       "RPD", "RPIQ", "n_train", "Güte", "enabled"]],
+                       "RPD", "RPIQ", "n_train", "Güte"]],
                  hide_index=True, use_container_width=True)
 
 with tab_help:
@@ -211,7 +215,8 @@ MIR-Spektrum voraus. Es sind **Schätzungen**, keine Laboranalysen.
 - **OSSL/KSSL** – große US-Bibliothek, USDA-Methoden (u. a. Sand/Schluff-Grenze 50 µm statt
   63 µm); Werte nicht 1:1 vergleichbar, gut als Gegenprobe.
 
-**Güte** 🟢 A gut · 🟡 B brauchbar · 🟠 C nur Screening · 🔴 D unzuverlässig (ausgeblendet).
+**Güte** 🟢 A gut · 🟡 B brauchbar · 🟠 C nur Screening · 🔴 D unzuverlässig. Welche Klassen gezeigt
+werden, stellt der Schieberegler *Mindestgüte* ein (Standard: bis C).
 Grundlage: RPIQ an einem unabhängigen Testset.
 
 **Intervall [von–bis]** Aus den Fehlern des Modells an Proben, die es beim Training *nicht*

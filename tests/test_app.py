@@ -36,6 +36,11 @@ def test_upload_table(monkeypatch):
     assert {"SaxSSL", "SaxSSL+SaxTox", "SaxTox", "OSSL/KSSL"} <= set(tab["Quelle"])
     assert not tab.astype(str).apply(lambda c: c.str.contains("annah")).any().any()
 
+    at.sidebar.select_slider[0].set_value("A").run()  # only class A
+    assert set(at.dataframe[0].value["Eigenschaft"][2:].str[0]) == {"🟢"}
+    at.sidebar.select_slider[0].set_value("D").run()  # everything incl. D
+    assert "🔴" in set(at.dataframe[0].value["Eigenschaft"].str[0])
+
     at.sidebar.checkbox[0].check().run()               # peat models on
     assert not at.exception
     assert "Torf (pmird)" in set(at.dataframe[0].value["Quelle"])

@@ -43,7 +43,7 @@ Klassen nach RPIQ auf einem unabhängigen Testset · alle Kennzahlen in [`models
 | 🟢 **A** | Corg, Ct, Nt, TOC, TOC400, ROC · Ton, Schluff, Sand · pH (CaCl₂) · Fe_d · P (Königswasser) |
 | 🟡 **B** | KAK pot. · Fe_o · Trockenrohdichte · Cr, Ni, Zn |
 | 🟠 **C** | C/N · TIC900 · KAK eff. · P₂O₅ (CAL) · Mg (CaCl₂) · Cu · Benzo(a)pyren, PAK16 |
-| 🔴 **D** | ausgeblendet: CaCO₃, K₂O (CAL), K, Mg, As, Cd, Hg, Pb (Königswasser) |
+| 🔴 **D** | nur per Schieberegler: CaCO₃, K₂O (CAL), K, Mg, As, Cd, Hg, Pb (Königswasser) |
 
 **Torf** (pmird): Nt, C/N (A) · **OSSL/KSSL**: 11 Modelle (Achtung: USDA-Sandgrenze 50 µm)
 
