@@ -1,0 +1,2113 @@
+{
+ "version": 1,
+ "created": "2026-10-08",
+ "alpha": 0.32,
+ "hinweis": "SaxSSL+Hannah = gepoolte lokale Modelle (Kennard-Stone-Test). OSSL = KSSL (USA), USDA-Methoden: Sand/Schluff-Grenze 50 µm statt 63 µm.",
+ "targets": [
+  {
+   "id": "corg",
+   "name": "Corg",
+   "unit": "Gew.-%",
+   "group": "Kohlenstoff & Stickstoff"
+  },
+  {
+   "id": "ct",
+   "name": "Gesamt-C",
+   "unit": "Gew.-%",
+   "group": "Kohlenstoff & Stickstoff"
+  },
+  {
+   "id": "nt",
+   "name": "Gesamt-N",
+   "unit": "Gew.-%",
+   "group": "Kohlenstoff & Stickstoff"
+  },
+  {
+   "id": "cn",
+   "name": "C/N-Verhältnis",
+   "unit": "-",
+   "group": "Kohlenstoff & Stickstoff"
+  },
+  {
+   "id": "toc",
+   "name": "TOC (soliTOC)",
+   "unit": "Gew.-%",
+   "group": "Kohlenstoff & Stickstoff"
+  },
+  {
+   "id": "toc400",
+   "name": "TOC400 (labiler C)",
+   "unit": "Gew.-%",
+   "group": "Kohlenstoff & Stickstoff"
+  },
+  {
+   "id": "roc",
+   "name": "ROC (resistenter C)",
+   "unit": "Gew.-%",
+   "group": "Kohlenstoff & Stickstoff"
+  },
+  {
+   "id": "tic900",
+   "name": "TIC900 (anorg. C)",
+   "unit": "Gew.-%",
+   "group": "Kohlenstoff & Stickstoff"
+  },
+  {
+   "id": "caco3",
+   "name": "CaCO3",
+   "unit": "Gew.-%",
+   "group": "Kohlenstoff & Stickstoff"
+  },
+  {
+   "id": "ton",
+   "name": "Ton",
+   "unit": "Gew.-%",
+   "group": "Textur"
+  },
+  {
+   "id": "schluff",
+   "name": "Schluff",
+   "unit": "Gew.-%",
+   "group": "Textur"
+  },
+  {
+   "id": "sand",
+   "name": "Sand",
+   "unit": "Gew.-%",
+   "group": "Textur"
+  },
+  {
+   "id": "ph_cacl2",
+   "name": "pH (CaCl2)",
+   "unit": "-",
+   "group": "Bodenchemie"
+  },
+  {
+   "id": "kak_pot",
+   "name": "KAK (potentiell)",
+   "unit": "cmolc/kg",
+   "group": "Bodenchemie"
+  },
+  {
+   "id": "kak_eff",
+   "name": "KAK (effektiv)",
+   "unit": "cmolc/kg",
+   "group": "Bodenchemie"
+  },
+  {
+   "id": "fe_d",
+   "name": "Fe (Dithionit)",
+   "unit": "Gew.-%",
+   "group": "Bodenchemie"
+  },
+  {
+   "id": "fe_o",
+   "name": "Fe (Oxalat)",
+   "unit": "Gew.-%",
+   "group": "Bodenchemie"
+  },
+  {
+   "id": "trd",
+   "name": "Trockenrohdichte",
+   "unit": "g/cm³",
+   "group": "Bodenphysik"
+  },
+  {
+   "id": "loi",
+   "name": "Glühverlust",
+   "unit": "Gew.-%",
+   "group": "Bodenphysik"
+  },
+  {
+   "id": "p_cal",
+   "name": "P2O5 (CAL)",
+   "unit": "mg/100g",
+   "group": "Nährstoffe"
+  },
+  {
+   "id": "k_cal",
+   "name": "K2O (CAL)",
+   "unit": "mg/100g",
+   "group": "Nährstoffe"
+  },
+  {
+   "id": "mg_cacl2",
+   "name": "Mg (CaCl2)",
+   "unit": "mg/100g",
+   "group": "Nährstoffe"
+  },
+  {
+   "id": "p_kw",
+   "name": "P (Königswasser)",
+   "unit": "mg/kg",
+   "group": "Nährstoffe"
+  },
+  {
+   "id": "k_kw",
+   "name": "K (Königswasser)",
+   "unit": "mg/kg",
+   "group": "Nährstoffe"
+  },
+  {
+   "id": "mg_kw",
+   "name": "Mg (Königswasser)",
+   "unit": "mg/kg",
+   "group": "Nährstoffe"
+  },
+  {
+   "id": "as_kw",
+   "name": "Arsen",
+   "unit": "mg/kg",
+   "group": "Schwermetalle (Königswasser)"
+  },
+  {
+   "id": "cd_kw",
+   "name": "Cadmium",
+   "unit": "mg/kg",
+   "group": "Schwermetalle (Königswasser)"
+  },
+  {
+   "id": "cr_kw",
+   "name": "Chrom",
+   "unit": "mg/kg",
+   "group": "Schwermetalle (Königswasser)"
+  },
+  {
+   "id": "cu_kw",
+   "name": "Kupfer",
+   "unit": "mg/kg",
+   "group": "Schwermetalle (Königswasser)"
+  },
+  {
+   "id": "hg_kw",
+   "name": "Quecksilber",
+   "unit": "mg/kg",
+   "group": "Schwermetalle (Königswasser)"
+  },
+  {
+   "id": "ni_kw",
+   "name": "Nickel",
+   "unit": "mg/kg",
+   "group": "Schwermetalle (Königswasser)"
+  },
+  {
+   "id": "pb_kw",
+   "name": "Blei",
+   "unit": "mg/kg",
+   "group": "Schwermetalle (Königswasser)"
+  },
+  {
+   "id": "zn_kw",
+   "name": "Zink",
+   "unit": "mg/kg",
+   "group": "Schwermetalle (Königswasser)"
+  },
+  {
+   "id": "bap",
+   "name": "Benzo(a)pyren",
+   "unit": "µg/kg",
+   "group": "Organische Schadstoffe"
+  },
+  {
+   "id": "pak16",
+   "name": "PAK (Summe 16 EPA)",
+   "unit": "µg/kg",
+   "group": "Organische Schadstoffe"
+  }
+ ],
+ "model_sets": {
+  "mineral": "SaxSSL+Hannah",
+  "peat": "Torf (pmird)"
+ },
+ "models": [
+  {
+   "id": "corg__mineral",
+   "target": "corg",
+   "display_name": "Corg",
+   "unit": "Gew.-%",
+   "group": "Kohlenstoff & Stickstoff",
+   "origin": "SaxSSL+Hannah",
+   "model_set": "mineral",
+   "algo": "PLScv",
+   "path": "model_mineral_corg_PLScv.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.94,
+    "RMSE": 0.4424,
+    "RPD": 4.08,
+    "RPIQ": 5.38,
+    "RPIQ_eval": 5.38,
+    "n_train": 867,
+    "n_test": 289
+   },
+   "quality_class": "A",
+   "conformal": {
+    "q": 0.0873,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_mineral.joblib",
+   "enabled": true
+  },
+  {
+   "id": "ct__mineral",
+   "target": "ct",
+   "display_name": "Gesamt-C",
+   "unit": "Gew.-%",
+   "group": "Kohlenstoff & Stickstoff",
+   "origin": "SaxSSL+Hannah",
+   "model_set": "mineral",
+   "algo": "PLScv",
+   "path": "model_mineral_ct_PLScv.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.958,
+    "RMSE": 0.2768,
+    "RPD": 4.89,
+    "RPIQ": 6.61,
+    "RPIQ_eval": 6.61,
+    "n_train": 1022,
+    "n_test": 341
+   },
+   "quality_class": "A",
+   "conformal": {
+    "q": 0.0663,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_mineral.joblib",
+   "enabled": true
+  },
+  {
+   "id": "nt__mineral",
+   "target": "nt",
+   "display_name": "Gesamt-N",
+   "unit": "Gew.-%",
+   "group": "Kohlenstoff & Stickstoff",
+   "origin": "SaxSSL+Hannah",
+   "model_set": "mineral",
+   "algo": "PLScv",
+   "path": "model_mineral_nt_PLScv.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.929,
+    "RMSE": 0.0377,
+    "RPD": 3.75,
+    "RPIQ": 3.98,
+    "RPIQ_eval": 3.98,
+    "n_train": 830,
+    "n_test": 276
+   },
+   "quality_class": "A",
+   "conformal": {
+    "q": 0.0247,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_mineral.joblib",
+   "enabled": true
+  },
+  {
+   "id": "cn__mineral",
+   "target": "cn",
+   "display_name": "C/N-Verhältnis",
+   "unit": "-",
+   "group": "Kohlenstoff & Stickstoff",
+   "origin": "SaxSSL+Hannah",
+   "model_set": "mineral",
+   "algo": "Cubist",
+   "path": "model_mineral_cn_Cubist.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.787,
+    "RMSE": 2.8135,
+    "RPD": 2.17,
+    "RPIQ": 1.59,
+    "RPIQ_eval": 1.59,
+    "n_train": 816,
+    "n_test": 272
+   },
+   "quality_class": "C",
+   "conformal": {
+    "q": 0.124,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_mineral.joblib",
+   "enabled": true
+  },
+  {
+   "id": "toc__mineral",
+   "target": "toc",
+   "display_name": "TOC (soliTOC)",
+   "unit": "Gew.-%",
+   "group": "Kohlenstoff & Stickstoff",
+   "origin": "SaxSSL+Hannah",
+   "model_set": "mineral",
+   "algo": "PLScv",
+   "path": "model_mineral_toc_PLScv.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.957,
+    "RMSE": 0.2709,
+    "RPD": 4.85,
+    "RPIQ": 6.16,
+    "RPIQ_eval": 6.16,
+    "n_train": 1018,
+    "n_test": 339
+   },
+   "quality_class": "A",
+   "conformal": {
+    "q": 0.05,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_mineral.joblib",
+   "enabled": true
+  },
+  {
+   "id": "toc400__mineral",
+   "target": "toc400",
+   "display_name": "TOC400 (labiler C)",
+   "unit": "Gew.-%",
+   "group": "Kohlenstoff & Stickstoff",
+   "origin": "SaxSSL+Hannah",
+   "model_set": "mineral",
+   "algo": "PLScv",
+   "path": "model_mineral_toc400_PLScv.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.959,
+    "RMSE": 0.2378,
+    "RPD": 4.94,
+    "RPIQ": 6.41,
+    "RPIQ_eval": 6.41,
+    "n_train": 1018,
+    "n_test": 339
+   },
+   "quality_class": "A",
+   "conformal": {
+    "q": 0.0473,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_mineral.joblib",
+   "enabled": true
+  },
+  {
+   "id": "roc__mineral",
+   "target": "roc",
+   "display_name": "ROC (resistenter C)",
+   "unit": "Gew.-%",
+   "group": "Kohlenstoff & Stickstoff",
+   "origin": "SaxSSL+Hannah",
+   "model_set": "mineral",
+   "algo": "PLScv",
+   "path": "model_mineral_roc_PLScv.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.903,
+    "RMSE": 0.054,
+    "RPD": 3.22,
+    "RPIQ": 2.78,
+    "RPIQ_eval": 2.78,
+    "n_train": 1018,
+    "n_test": 339
+   },
+   "quality_class": "A",
+   "conformal": {
+    "q": 0.0242,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_mineral.joblib",
+   "enabled": true
+  },
+  {
+   "id": "tic900__mineral",
+   "target": "tic900",
+   "display_name": "TIC900 (anorg. C)",
+   "unit": "Gew.-%",
+   "group": "Kohlenstoff & Stickstoff",
+   "origin": "SaxSSL+Hannah",
+   "model_set": "mineral",
+   "algo": "PLScv",
+   "path": "model_mineral_tic900_PLScv.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.868,
+    "RMSE": 0.0262,
+    "RPD": 2.76,
+    "RPIQ": 1.53,
+    "RPIQ_eval": 1.53,
+    "n_train": 1018,
+    "n_test": 339
+   },
+   "quality_class": "C",
+   "conformal": {
+    "q": 0.0105,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_mineral.joblib",
+   "enabled": true
+  },
+  {
+   "id": "caco3__mineral",
+   "target": "caco3",
+   "display_name": "CaCO3",
+   "unit": "Gew.-%",
+   "group": "Kohlenstoff & Stickstoff",
+   "origin": "SaxSSL+Hannah",
+   "model_set": "mineral",
+   "algo": "PLScv",
+   "path": "model_mineral_caco3_PLScv.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.715,
+    "RMSE": 0.2726,
+    "RPD": 1.88,
+    "RPIQ": 0.61,
+    "RPIQ_eval": 0.61,
+    "n_train": 556,
+    "n_test": 186
+   },
+   "quality_class": "D",
+   "conformal": {
+    "q": 0.1122,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_mineral.joblib",
+   "enabled": false
+  },
+  {
+   "id": "ton__mineral",
+   "target": "ton",
+   "display_name": "Ton",
+   "unit": "Gew.-%",
+   "group": "Textur",
+   "origin": "SaxSSL+Hannah",
+   "model_set": "mineral",
+   "algo": "Cubist",
+   "path": "model_mineral_ton_Cubist.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": false,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.723,
+    "RMSE": 3.6891,
+    "RPD": 1.9,
+    "RPIQ": 2.63,
+    "RPIQ_eval": 2.63,
+    "n_train": 670,
+    "n_test": 223
+   },
+   "quality_class": "A",
+   "conformal": {
+    "q": 2.7586,
+    "scale": "linear",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_mineral.joblib",
+   "enabled": true
+  },
+  {
+   "id": "schluff__mineral",
+   "target": "schluff",
+   "display_name": "Schluff",
+   "unit": "Gew.-%",
+   "group": "Textur",
+   "origin": "SaxSSL+Hannah",
+   "model_set": "mineral",
+   "algo": "Cubist",
+   "path": "model_mineral_schluff_Cubist.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": false,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.803,
+    "RMSE": 9.3838,
+    "RPD": 2.26,
+    "RPIQ": 3.58,
+    "RPIQ_eval": 3.58,
+    "n_train": 644,
+    "n_test": 214
+   },
+   "quality_class": "A",
+   "conformal": {
+    "q": 7.4466,
+    "scale": "linear",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_mineral.joblib",
+   "enabled": true
+  },
+  {
+   "id": "sand__mineral",
+   "target": "sand",
+   "display_name": "Sand",
+   "unit": "Gew.-%",
+   "group": "Textur",
+   "origin": "SaxSSL+Hannah",
+   "model_set": "mineral",
+   "algo": "Cubist",
+   "path": "model_mineral_sand_Cubist.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": false,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.848,
+    "RMSE": 10.1039,
+    "RPD": 2.57,
+    "RPIQ": 4.17,
+    "RPIQ_eval": 4.17,
+    "n_train": 644,
+    "n_test": 214
+   },
+   "quality_class": "A",
+   "conformal": {
+    "q": 7.5004,
+    "scale": "linear",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_mineral.joblib",
+   "enabled": true
+  },
+  {
+   "id": "ph_cacl2__mineral",
+   "target": "ph_cacl2",
+   "display_name": "pH (CaCl2)",
+   "unit": "-",
+   "group": "Bodenchemie",
+   "origin": "SaxSSL+Hannah",
+   "model_set": "mineral",
+   "algo": "Cubist",
+   "path": "model_mineral_ph_cacl2_Cubist.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": false,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.874,
+    "RMSE": 0.2934,
+    "RPD": 2.83,
+    "RPIQ": 3.43,
+    "RPIQ_eval": 3.43,
+    "n_train": 868,
+    "n_test": 290
+   },
+   "quality_class": "A",
+   "conformal": {
+    "q": 0.2254,
+    "scale": "linear",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_mineral.joblib",
+   "enabled": true
+  },
+  {
+   "id": "kak_pot__mineral",
+   "target": "kak_pot",
+   "display_name": "KAK (potentiell)",
+   "unit": "cmolc/kg",
+   "group": "Bodenchemie",
+   "origin": "SaxSSL+Hannah",
+   "model_set": "mineral",
+   "algo": "Cubist",
+   "path": "model_mineral_kak_pot_Cubist.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.783,
+    "RMSE": 3.5392,
+    "RPD": 2.15,
+    "RPIQ": 1.96,
+    "RPIQ_eval": 1.96,
+    "n_train": 428,
+    "n_test": 143
+   },
+   "quality_class": "B",
+   "conformal": {
+    "q": 0.1401,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_mineral.joblib",
+   "enabled": true
+  },
+  {
+   "id": "kak_eff__mineral",
+   "target": "kak_eff",
+   "display_name": "KAK (effektiv)",
+   "unit": "cmolc/kg",
+   "group": "Bodenchemie",
+   "origin": "SaxSSL+Hannah",
+   "model_set": "mineral",
+   "algo": "Cubist",
+   "path": "model_mineral_kak_eff_Cubist.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.49,
+    "RMSE": 4.3105,
+    "RPD": 1.41,
+    "RPIQ": 1.65,
+    "RPIQ_eval": 1.65,
+    "n_train": 164,
+    "n_test": 55
+   },
+   "quality_class": "C",
+   "conformal": {
+    "q": 0.1658,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_mineral.joblib",
+   "enabled": true
+  },
+  {
+   "id": "fe_d__mineral",
+   "target": "fe_d",
+   "display_name": "Fe (Dithionit)",
+   "unit": "Gew.-%",
+   "group": "Bodenchemie",
+   "origin": "SaxSSL+Hannah",
+   "model_set": "mineral",
+   "algo": "Cubist",
+   "path": "model_mineral_fe_d_Cubist.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.833,
+    "RMSE": 0.1907,
+    "RPD": 2.45,
+    "RPIQ": 3.34,
+    "RPIQ_eval": 3.34,
+    "n_train": 605,
+    "n_test": 202
+   },
+   "quality_class": "A",
+   "conformal": {
+    "q": 0.0501,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_mineral.joblib",
+   "enabled": true
+  },
+  {
+   "id": "fe_o__mineral",
+   "target": "fe_o",
+   "display_name": "Fe (Oxalat)",
+   "unit": "Gew.-%",
+   "group": "Bodenchemie",
+   "origin": "SaxSSL+Hannah",
+   "model_set": "mineral",
+   "algo": "Cubist",
+   "path": "model_mineral_fe_o_Cubist.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.77,
+    "RMSE": 0.0933,
+    "RPD": 2.09,
+    "RPIQ": 2.47,
+    "RPIQ_eval": 2.47,
+    "n_train": 605,
+    "n_test": 202
+   },
+   "quality_class": "B",
+   "conformal": {
+    "q": 0.0363,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_mineral.joblib",
+   "enabled": true
+  },
+  {
+   "id": "trd__mineral",
+   "target": "trd",
+   "display_name": "Trockenrohdichte",
+   "unit": "g/cm³",
+   "group": "Bodenphysik",
+   "origin": "SaxSSL+Hannah",
+   "model_set": "mineral",
+   "algo": "Cubist",
+   "path": "model_mineral_trd_Cubist.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": false,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.541,
+    "RMSE": 0.191,
+    "RPD": 1.48,
+    "RPIQ": 2.1,
+    "RPIQ_eval": 2.1,
+    "n_train": 403,
+    "n_test": 134
+   },
+   "quality_class": "B",
+   "conformal": {
+    "q": 0.1604,
+    "scale": "linear",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_mineral.joblib",
+   "enabled": true
+  },
+  {
+   "id": "p_cal__mineral",
+   "target": "p_cal",
+   "display_name": "P2O5 (CAL)",
+   "unit": "mg/100g",
+   "group": "Nährstoffe",
+   "origin": "SaxSSL+Hannah",
+   "model_set": "mineral",
+   "algo": "Cubist",
+   "path": "model_mineral_p_cal_Cubist.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.72,
+    "RMSE": 6.2677,
+    "RPD": 1.9,
+    "RPIQ": 1.76,
+    "RPIQ_eval": 1.76,
+    "n_train": 326,
+    "n_test": 109
+   },
+   "quality_class": "C",
+   "conformal": {
+    "q": 0.4306,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_mineral.joblib",
+   "enabled": true
+  },
+  {
+   "id": "k_cal__mineral",
+   "target": "k_cal",
+   "display_name": "K2O (CAL)",
+   "unit": "mg/100g",
+   "group": "Nährstoffe",
+   "origin": "SaxSSL+Hannah",
+   "model_set": "mineral",
+   "algo": "Cubist",
+   "path": "model_mineral_k_cal_Cubist.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.361,
+    "RMSE": 12.4964,
+    "RPD": 1.26,
+    "RPIQ": 0.88,
+    "RPIQ_eval": 0.88,
+    "n_train": 326,
+    "n_test": 109
+   },
+   "quality_class": "D",
+   "conformal": {
+    "q": 0.5922,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_mineral.joblib",
+   "enabled": false
+  },
+  {
+   "id": "mg_cacl2__mineral",
+   "target": "mg_cacl2",
+   "display_name": "Mg (CaCl2)",
+   "unit": "mg/100g",
+   "group": "Nährstoffe",
+   "origin": "SaxSSL+Hannah",
+   "model_set": "mineral",
+   "algo": "XGBoost",
+   "path": "model_mineral_mg_cacl2_XGBoost.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.444,
+    "RMSE": 6.9626,
+    "RPD": 1.35,
+    "RPIQ": 1.58,
+    "RPIQ_eval": 1.58,
+    "n_train": 580,
+    "n_test": 193
+   },
+   "quality_class": "C",
+   "conformal": {
+    "q": 0.3255,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_mineral.joblib",
+   "enabled": true
+  },
+  {
+   "id": "p_kw__mineral",
+   "target": "p_kw",
+   "display_name": "P (Königswasser)",
+   "unit": "mg/kg",
+   "group": "Nährstoffe",
+   "origin": "SaxSSL+Hannah",
+   "model_set": "mineral",
+   "algo": "Cubist",
+   "path": "model_mineral_p_kw_Cubist.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.886,
+    "RMSE": 179.4456,
+    "RPD": 2.97,
+    "RPIQ": 3.59,
+    "RPIQ_eval": 2.84,
+    "n_train": 694,
+    "n_test": 231
+   },
+   "quality_class": "A",
+   "conformal": {
+    "q": 0.2234,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_mineral.joblib",
+   "enabled": true
+  },
+  {
+   "id": "k_kw__mineral",
+   "target": "k_kw",
+   "display_name": "K (Königswasser)",
+   "unit": "mg/kg",
+   "group": "Nährstoffe",
+   "origin": "SaxSSL+Hannah",
+   "model_set": "mineral",
+   "algo": "Cubist",
+   "path": "model_mineral_k_kw_Cubist.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.0,
+    "RMSE": 1970.1651,
+    "RPD": 1.0,
+    "RPIQ": 1.52,
+    "RPIQ_eval": 0.46,
+    "n_train": 694,
+    "n_test": 231
+   },
+   "quality_class": "D",
+   "conformal": {
+    "q": 0.8729,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_mineral.joblib",
+   "enabled": false
+  },
+  {
+   "id": "mg_kw__mineral",
+   "target": "mg_kw",
+   "display_name": "Mg (Königswasser)",
+   "unit": "mg/kg",
+   "group": "Nährstoffe",
+   "origin": "SaxSSL+Hannah",
+   "model_set": "mineral",
+   "algo": "Cubist",
+   "path": "model_mineral_mg_kw_Cubist.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.096,
+    "RMSE": 3249.3789,
+    "RPD": 1.05,
+    "RPIQ": 1.08,
+    "RPIQ_eval": 0.56,
+    "n_train": 694,
+    "n_test": 231
+   },
+   "quality_class": "D",
+   "conformal": {
+    "q": 0.7936,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_mineral.joblib",
+   "enabled": false
+  },
+  {
+   "id": "as_kw__mineral",
+   "target": "as_kw",
+   "display_name": "Arsen",
+   "unit": "mg/kg",
+   "group": "Schwermetalle (Königswasser)",
+   "origin": "SaxSSL+Hannah",
+   "model_set": "mineral",
+   "algo": "XGBoost",
+   "path": "model_mineral_as_kw_XGBoost.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.642,
+    "RMSE": 103.7367,
+    "RPD": 1.68,
+    "RPIQ": 0.45,
+    "RPIQ_eval": 0.45,
+    "n_train": 824,
+    "n_test": 274
+   },
+   "quality_class": "D",
+   "conformal": {
+    "q": 0.5165,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_mineral.joblib",
+   "enabled": false
+  },
+  {
+   "id": "cd_kw__mineral",
+   "target": "cd_kw",
+   "display_name": "Cadmium",
+   "unit": "mg/kg",
+   "group": "Schwermetalle (Königswasser)",
+   "origin": "SaxSSL+Hannah",
+   "model_set": "mineral",
+   "algo": "XGBoost",
+   "path": "model_mineral_cd_kw_XGBoost.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.623,
+    "RMSE": 2.4598,
+    "RPD": 1.63,
+    "RPIQ": 0.82,
+    "RPIQ_eval": 0.82,
+    "n_train": 824,
+    "n_test": 274
+   },
+   "quality_class": "D",
+   "conformal": {
+    "q": 0.3373,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_mineral.joblib",
+   "enabled": false
+  },
+  {
+   "id": "cr_kw__mineral",
+   "target": "cr_kw",
+   "display_name": "Chrom",
+   "unit": "mg/kg",
+   "group": "Schwermetalle (Königswasser)",
+   "origin": "SaxSSL+Hannah",
+   "model_set": "mineral",
+   "algo": "Cubist",
+   "path": "model_mineral_cr_kw_Cubist.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.726,
+    "RMSE": 15.4748,
+    "RPD": 1.92,
+    "RPIQ": 1.94,
+    "RPIQ_eval": 1.94,
+    "n_train": 824,
+    "n_test": 274
+   },
+   "quality_class": "B",
+   "conformal": {
+    "q": 0.1828,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_mineral.joblib",
+   "enabled": true
+  },
+  {
+   "id": "cu_kw__mineral",
+   "target": "cu_kw",
+   "display_name": "Kupfer",
+   "unit": "mg/kg",
+   "group": "Schwermetalle (Königswasser)",
+   "origin": "SaxSSL+Hannah",
+   "model_set": "mineral",
+   "algo": "Cubist",
+   "path": "model_mineral_cu_kw_Cubist.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.7,
+    "RMSE": 30.8486,
+    "RPD": 1.83,
+    "RPIQ": 1.45,
+    "RPIQ_eval": 1.45,
+    "n_train": 824,
+    "n_test": 274
+   },
+   "quality_class": "C",
+   "conformal": {
+    "q": 0.3454,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_mineral.joblib",
+   "enabled": true
+  },
+  {
+   "id": "hg_kw__mineral",
+   "target": "hg_kw",
+   "display_name": "Quecksilber",
+   "unit": "mg/kg",
+   "group": "Schwermetalle (Königswasser)",
+   "origin": "SaxSSL+Hannah",
+   "model_set": "mineral",
+   "algo": "Cubist",
+   "path": "model_mineral_hg_kw_Cubist.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.739,
+    "RMSE": 0.2512,
+    "RPD": 1.96,
+    "RPIQ": 0.76,
+    "RPIQ_eval": 0.76,
+    "n_train": 824,
+    "n_test": 274
+   },
+   "quality_class": "D",
+   "conformal": {
+    "q": 0.0828,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_mineral.joblib",
+   "enabled": false
+  },
+  {
+   "id": "ni_kw__mineral",
+   "target": "ni_kw",
+   "display_name": "Nickel",
+   "unit": "mg/kg",
+   "group": "Schwermetalle (Königswasser)",
+   "origin": "SaxSSL+Hannah",
+   "model_set": "mineral",
+   "algo": "Cubist",
+   "path": "model_mineral_ni_kw_Cubist.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.684,
+    "RMSE": 11.3563,
+    "RPD": 1.78,
+    "RPIQ": 2.45,
+    "RPIQ_eval": 2.45,
+    "n_train": 824,
+    "n_test": 274
+   },
+   "quality_class": "B",
+   "conformal": {
+    "q": 0.2285,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_mineral.joblib",
+   "enabled": true
+  },
+  {
+   "id": "pb_kw__mineral",
+   "target": "pb_kw",
+   "display_name": "Blei",
+   "unit": "mg/kg",
+   "group": "Schwermetalle (Königswasser)",
+   "origin": "SaxSSL+Hannah",
+   "model_set": "mineral",
+   "algo": "XGBoost",
+   "path": "model_mineral_pb_kw_XGBoost.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.664,
+    "RMSE": 135.2884,
+    "RPD": 1.73,
+    "RPIQ": 0.48,
+    "RPIQ_eval": 0.48,
+    "n_train": 824,
+    "n_test": 274
+   },
+   "quality_class": "D",
+   "conformal": {
+    "q": 0.4856,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_mineral.joblib",
+   "enabled": false
+  },
+  {
+   "id": "zn_kw__mineral",
+   "target": "zn_kw",
+   "display_name": "Zink",
+   "unit": "mg/kg",
+   "group": "Schwermetalle (Königswasser)",
+   "origin": "SaxSSL+Hannah",
+   "model_set": "mineral",
+   "algo": "XGBoost",
+   "path": "model_mineral_zn_kw_XGBoost.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.746,
+    "RMSE": 122.3874,
+    "RPD": 1.99,
+    "RPIQ": 2.16,
+    "RPIQ_eval": 2.16,
+    "n_train": 813,
+    "n_test": 271
+   },
+   "quality_class": "B",
+   "conformal": {
+    "q": 0.4603,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_mineral.joblib",
+   "enabled": true
+  },
+  {
+   "id": "bap__mineral",
+   "target": "bap",
+   "display_name": "Benzo(a)pyren",
+   "unit": "µg/kg",
+   "group": "Organische Schadstoffe",
+   "origin": "SaxSSL+Hannah",
+   "model_set": "mineral",
+   "algo": "XGBoost",
+   "path": "model_mineral_bap_XGBoost.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.431,
+    "RMSE": 212.4672,
+    "RPD": 1.33,
+    "RPIQ": 1.52,
+    "RPIQ_eval": 1.52,
+    "n_train": 216,
+    "n_test": 72
+   },
+   "quality_class": "C",
+   "conformal": {
+    "q": 0.7679,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_mineral.joblib",
+   "enabled": true
+  },
+  {
+   "id": "pak16__mineral",
+   "target": "pak16",
+   "display_name": "PAK (Summe 16 EPA)",
+   "unit": "µg/kg",
+   "group": "Organische Schadstoffe",
+   "origin": "SaxSSL+Hannah",
+   "model_set": "mineral",
+   "algo": "XGBoost",
+   "path": "model_mineral_pak16_XGBoost.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.42,
+    "RMSE": 2941.6466,
+    "RPD": 1.32,
+    "RPIQ": 1.41,
+    "RPIQ_eval": 1.41,
+    "n_train": 216,
+    "n_test": 72
+   },
+   "quality_class": "C",
+   "conformal": {
+    "q": 0.8227,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_mineral.joblib",
+   "enabled": true
+  },
+  {
+   "id": "corg__peat",
+   "target": "corg",
+   "display_name": "Corg",
+   "unit": "Gew.-%",
+   "group": "Kohlenstoff & Stickstoff",
+   "origin": "Torf (pmird)",
+   "model_set": "peat",
+   "algo": "PLScv",
+   "path": "model_peat_corg_PLScv.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.695,
+    "RMSE": 5.8044,
+    "RPD": 1.81,
+    "RPIQ": 1.27,
+    "RPIQ_eval": 0.71,
+    "n_train": 1135,
+    "n_test": 378
+   },
+   "quality_class": "D",
+   "conformal": {
+    "q": 0.0905,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_peat.joblib",
+   "enabled": false
+  },
+  {
+   "id": "nt__peat",
+   "target": "nt",
+   "display_name": "Gesamt-N",
+   "unit": "Gew.-%",
+   "group": "Kohlenstoff & Stickstoff",
+   "origin": "Torf (pmird)",
+   "model_set": "peat",
+   "algo": "Cubist",
+   "path": "model_peat_nt_Cubist.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.8,
+    "RMSE": 0.3053,
+    "RPD": 2.24,
+    "RPIQ": 3.28,
+    "RPIQ_eval": 3.28,
+    "n_train": 1131,
+    "n_test": 377
+   },
+   "quality_class": "A",
+   "conformal": {
+    "q": 0.0607,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_peat.joblib",
+   "enabled": true
+  },
+  {
+   "id": "cn__peat",
+   "target": "cn",
+   "display_name": "C/N-Verhältnis",
+   "unit": "-",
+   "group": "Kohlenstoff & Stickstoff",
+   "origin": "Torf (pmird)",
+   "model_set": "peat",
+   "algo": "Cubist",
+   "path": "model_peat_cn_Cubist.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.8,
+    "RMSE": 10.3412,
+    "RPD": 2.24,
+    "RPIQ": 2.85,
+    "RPIQ_eval": 2.85,
+    "n_train": 1118,
+    "n_test": 372
+   },
+   "quality_class": "A",
+   "conformal": {
+    "q": 0.1353,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_peat.joblib",
+   "enabled": true
+  },
+  {
+   "id": "loi__peat",
+   "target": "loi",
+   "display_name": "Glühverlust",
+   "unit": "Gew.-%",
+   "group": "Bodenphysik",
+   "origin": "Torf (pmird)",
+   "model_set": "peat",
+   "algo": "XGBoost",
+   "path": "model_peat_loi_XGBoost.joblib",
+   "grid": {
+    "min": 650.0,
+    "max": 3998.0,
+    "n": 1675
+   },
+   "log_transform": false,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.562,
+    "RMSE": 13.9393,
+    "RPD": 1.52,
+    "RPIQ": 1.06,
+    "RPIQ_eval": 1.06,
+    "n_train": 224,
+    "n_test": 74
+   },
+   "quality_class": "D",
+   "conformal": {
+    "q": 5.5541,
+    "scale": "linear",
+    "alpha": 0.32,
+    "method": "max(KS-Test, 5-fold OOF)"
+   },
+   "screening_threshold": null,
+   "ad_ref": "ad_peat.joblib",
+   "enabled": false
+  },
+  {
+   "id": "caco3__ossl_kssl",
+   "target": "caco3",
+   "display_name": "CaCO3",
+   "unit": "Gew.-%",
+   "group": "Kohlenstoff & Stickstoff",
+   "origin": "OSSL-KSSL",
+   "algo": "XGBoost",
+   "path": "../ossl/model_caco3_ossl-kssl_XGBoost.joblib",
+   "grid": {
+    "min": 600.0,
+    "max": 4000.0,
+    "n": 1701
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.981,
+    "RMSE": 1.829,
+    "RPD": 7.18,
+    "RPIQ": 5.21,
+    "n_train": 24152,
+    "n_test": 6038
+   },
+   "quality_class": "A",
+   "conformal": {
+    "q": 0.1083,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "Testresiduen"
+   },
+   "screening_threshold": null,
+   "ad_ref": "../ossl/ad_ossl_kssl.joblib",
+   "enabled": true
+  },
+  {
+   "id": "corg__ossl_kssl",
+   "target": "corg",
+   "display_name": "Corg",
+   "unit": "Gew.-%",
+   "group": "Kohlenstoff & Stickstoff",
+   "origin": "OSSL-KSSL",
+   "algo": "XGBoost",
+   "path": "../ossl/model_corg_ossl-kssl_XGBoost.joblib",
+   "grid": {
+    "min": 600.0,
+    "max": 4000.0,
+    "n": 1701
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.983,
+    "RMSE": 1.443,
+    "RPD": 7.72,
+    "RPIQ": 1.68,
+    "n_train": 57722,
+    "n_test": 14431
+   },
+   "quality_class": "C",
+   "conformal": {
+    "q": 0.0808,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "Testresiduen"
+   },
+   "screening_threshold": null,
+   "ad_ref": "../ossl/ad_ossl_kssl.joblib",
+   "enabled": true
+  },
+  {
+   "id": "ct__ossl_kssl",
+   "target": "ct",
+   "display_name": "Gesamt-C",
+   "unit": "Gew.-%",
+   "group": "Kohlenstoff & Stickstoff",
+   "origin": "OSSL-KSSL",
+   "algo": "XGBoost",
+   "path": "../ossl/model_ct_ossl-kssl_XGBoost.joblib",
+   "grid": {
+    "min": 600.0,
+    "max": 4000.0,
+    "n": 1701
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.988,
+    "RMSE": 1.148,
+    "RPD": 9.31,
+    "RPIQ": 2.49,
+    "n_train": 58279,
+    "n_test": 14570
+   },
+   "quality_class": "B",
+   "conformal": {
+    "q": 0.0751,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "Testresiduen"
+   },
+   "screening_threshold": null,
+   "ad_ref": "../ossl/ad_ossl_kssl.joblib",
+   "enabled": true
+  },
+  {
+   "id": "fe_d__ossl_kssl",
+   "target": "fe_d",
+   "display_name": "Fe (Dithionit)",
+   "unit": "Gew.-%",
+   "group": "Bodenchemie",
+   "origin": "OSSL-KSSL",
+   "algo": "XGBoost",
+   "path": "../ossl/model_fe_d_ossl-kssl_XGBoost.joblib",
+   "grid": {
+    "min": 600.0,
+    "max": 4000.0,
+    "n": 1701
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.891,
+    "RMSE": 0.533,
+    "RPD": 3.03,
+    "RPIQ": 2.31,
+    "n_train": 28346,
+    "n_test": 7086
+   },
+   "quality_class": "B",
+   "conformal": {
+    "q": 0.1309,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "Testresiduen"
+   },
+   "screening_threshold": null,
+   "ad_ref": "../ossl/ad_ossl_kssl.joblib",
+   "enabled": true
+  },
+  {
+   "id": "kak_pot__ossl_kssl",
+   "target": "kak_pot",
+   "display_name": "KAK (potentiell)",
+   "unit": "cmolc/kg",
+   "group": "Bodenchemie",
+   "origin": "OSSL-KSSL",
+   "algo": "XGBoost",
+   "path": "../ossl/model_kak_pot_ossl-kssl_XGBoost.joblib",
+   "grid": {
+    "min": 600.0,
+    "max": 4000.0,
+    "n": 1701
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.947,
+    "RMSE": 5.199,
+    "RPD": 4.34,
+    "RPIQ": 3.33,
+    "n_train": 45145,
+    "n_test": 11286
+   },
+   "quality_class": "A",
+   "conformal": {
+    "q": 0.1178,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "Testresiduen"
+   },
+   "screening_threshold": null,
+   "ad_ref": "../ossl/ad_ossl_kssl.joblib",
+   "enabled": true
+  },
+  {
+   "id": "nt__ossl_kssl",
+   "target": "nt",
+   "display_name": "Gesamt-N",
+   "unit": "Gew.-%",
+   "group": "Kohlenstoff & Stickstoff",
+   "origin": "OSSL-KSSL",
+   "algo": "XGBoost",
+   "path": "../ossl/model_nt_ossl-kssl_XGBoost.joblib",
+   "grid": {
+    "min": 600.0,
+    "max": 4000.0,
+    "n": 1701
+   },
+   "log_transform": true,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.962,
+    "RMSE": 0.099,
+    "RPD": 5.13,
+    "RPIQ": 1.87,
+    "n_train": 58271,
+    "n_test": 14568
+   },
+   "quality_class": "C",
+   "conformal": {
+    "q": 0.0309,
+    "scale": "log1p",
+    "alpha": 0.32,
+    "method": "Testresiduen"
+   },
+   "screening_threshold": null,
+   "ad_ref": "../ossl/ad_ossl_kssl.joblib",
+   "enabled": true
+  },
+  {
+   "id": "ph_cacl2__ossl_kssl",
+   "target": "ph_cacl2",
+   "display_name": "pH (CaCl2)",
+   "unit": "-",
+   "group": "Bodenchemie",
+   "origin": "OSSL-KSSL",
+   "algo": "XGBoost",
+   "path": "../ossl/model_ph_cacl2_ossl-kssl_XGBoost.joblib",
+   "grid": {
+    "min": 600.0,
+    "max": 4000.0,
+    "n": 1701
+   },
+   "log_transform": false,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.899,
+    "RMSE": 0.446,
+    "RPD": 3.15,
+    "RPIQ": 5.72,
+    "n_train": 43218,
+    "n_test": 10804
+   },
+   "quality_class": "A",
+   "conformal": {
+    "q": 0.3551,
+    "scale": "linear",
+    "alpha": 0.32,
+    "method": "Testresiduen"
+   },
+   "screening_threshold": null,
+   "ad_ref": "../ossl/ad_ossl_kssl.joblib",
+   "enabled": true
+  },
+  {
+   "id": "sand__ossl_kssl",
+   "target": "sand",
+   "display_name": "Sand (USDA)",
+   "unit": "Gew.-%",
+   "group": "Textur",
+   "origin": "OSSL-KSSL",
+   "algo": "XGBoost",
+   "path": "../ossl/model_sand_ossl-kssl_XGBoost.joblib",
+   "grid": {
+    "min": 600.0,
+    "max": 4000.0,
+    "n": 1701
+   },
+   "log_transform": false,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.883,
+    "RMSE": 9.94,
+    "RPD": 2.93,
+    "RPIQ": 4.91,
+    "n_train": 40499,
+    "n_test": 10125
+   },
+   "quality_class": "A",
+   "conformal": {
+    "q": 7.9544,
+    "scale": "linear",
+    "alpha": 0.32,
+    "method": "Testresiduen"
+   },
+   "screening_threshold": null,
+   "ad_ref": "../ossl/ad_ossl_kssl.joblib",
+   "enabled": true
+  },
+  {
+   "id": "schluff__ossl_kssl",
+   "target": "schluff",
+   "display_name": "Schluff (USDA)",
+   "unit": "Gew.-%",
+   "group": "Textur",
+   "origin": "OSSL-KSSL",
+   "algo": "XGBoost",
+   "path": "../ossl/model_schluff_ossl-kssl_XGBoost.joblib",
+   "grid": {
+    "min": 600.0,
+    "max": 4000.0,
+    "n": 1701
+   },
+   "log_transform": false,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.811,
+    "RMSE": 8.915,
+    "RPD": 2.3,
+    "RPIQ": 3.43,
+    "n_train": 40500,
+    "n_test": 10125
+   },
+   "quality_class": "A",
+   "conformal": {
+    "q": 7.3305,
+    "scale": "linear",
+    "alpha": 0.32,
+    "method": "Testresiduen"
+   },
+   "screening_threshold": null,
+   "ad_ref": "../ossl/ad_ossl_kssl.joblib",
+   "enabled": true
+  },
+  {
+   "id": "ton__ossl_kssl",
+   "target": "ton",
+   "display_name": "Tongehalt",
+   "unit": "Gew.-%",
+   "group": "Textur",
+   "origin": "OSSL-KSSL",
+   "algo": "XGBoost",
+   "path": "../ossl/model_ton_ossl-kssl_XGBoost.joblib",
+   "grid": {
+    "min": 600.0,
+    "max": 4000.0,
+    "n": 1701
+   },
+   "log_transform": false,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.908,
+    "RMSE": 4.965,
+    "RPD": 3.3,
+    "RPIQ": 4.59,
+    "n_train": 40493,
+    "n_test": 10123
+   },
+   "quality_class": "A",
+   "conformal": {
+    "q": 3.2867,
+    "scale": "linear",
+    "alpha": 0.32,
+    "method": "Testresiduen"
+   },
+   "screening_threshold": null,
+   "ad_ref": "../ossl/ad_ossl_kssl.joblib",
+   "enabled": true
+  },
+  {
+   "id": "trd__ossl_kssl",
+   "target": "trd",
+   "display_name": "Trockenrohdichte",
+   "unit": "g/cm³",
+   "group": "Bodenphysik",
+   "origin": "OSSL-KSSL",
+   "algo": "XGBoost",
+   "path": "../ossl/model_trd_ossl-kssl_XGBoost.joblib",
+   "grid": {
+    "min": 600.0,
+    "max": 4000.0,
+    "n": 1701
+   },
+   "log_transform": false,
+   "prep_steps": [
+    "snv"
+   ],
+   "metrics": {
+    "R2": 0.777,
+    "RMSE": 0.128,
+    "RPD": 2.12,
+    "RPIQ": 2.42,
+    "n_train": 14154,
+    "n_test": 3539
+   },
+   "quality_class": "B",
+   "conformal": {
+    "q": 0.1091,
+    "scale": "linear",
+    "alpha": 0.32,
+    "method": "Testresiduen"
+   },
+   "screening_threshold": null,
+   "ad_ref": "../ossl/ad_ossl_kssl.joblib",
+   "enabled": true
+  }
+ ]
+}

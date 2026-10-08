@@ -1,0 +1,13 @@
+{
+ "model_caco3_ossl-kssl_XGBoost.joblib:1791424031": 0.1082679354053139,
+ "model_corg_ossl-kssl_XGBoost.joblib:1784121228": 0.08078112748835918,
+ "model_ct_ossl-kssl_XGBoost.joblib:1791423943": 0.0750574612669244,
+ "model_fe_d_ossl-kssl_XGBoost.joblib:1791424186": 0.13088961931032306,
+ "model_kak_pot_ossl-kssl_XGBoost.joblib:1784121617": 0.11784863211610408,
+ "model_nt_ossl-kssl_XGBoost.joblib:1784121336": 0.030902154978111267,
+ "model_ph_cacl2_ossl-kssl_XGBoost.joblib:1784121521": 0.3550553321838381,
+ "model_sand_ossl-kssl_XGBoost.joblib:1791423789": 7.954369873046874,
+ "model_schluff_ossl-kssl_XGBoost.joblib:1791423857": 7.330468017578125,
+ "model_ton_ossl-kssl_XGBoost.joblib:1784121425": 3.2866835046303704,
+ "model_trd_ossl-kssl_XGBoost.joblib:1791424096": 0.10911228665252692
+}

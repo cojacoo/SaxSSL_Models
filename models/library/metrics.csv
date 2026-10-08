@@ -1,0 +1,40 @@
+set,target,name,group,algo,n_train,n_test,R2,R2_cv,RMSE,RPD,RPIQ,RPIQ_eval,q,skipped,R2_hannah,R2_saxssl,R2_pmird,class
+mineral,corg,Corg,Kohlenstoff & Stickstoff,PLScv,867.0,289.0,0.94,0.936,0.4424,4.08,5.38,5.38,0.0873,,0.939,0.911,,A
+mineral,ct,Gesamt-C,Kohlenstoff & Stickstoff,PLScv,1022.0,341.0,0.958,0.969,0.2768,4.89,6.61,6.61,0.0663,,,0.958,,A
+mineral,nt,Gesamt-N,Kohlenstoff & Stickstoff,PLScv,830.0,276.0,0.929,0.917,0.0377,3.75,3.98,3.98,0.0247,,0.913,0.886,,A
+mineral,cn,C/N-Verhältnis,Kohlenstoff & Stickstoff,Cubist,816.0,272.0,0.787,0.831,2.8135,2.17,1.59,1.59,0.124,,0.509,0.795,,C
+mineral,toc,TOC (soliTOC),Kohlenstoff & Stickstoff,PLScv,1018.0,339.0,0.957,0.985,0.2709,4.85,6.16,6.16,0.05,,,0.957,,A
+mineral,toc400,TOC400 (labiler C),Kohlenstoff & Stickstoff,PLScv,1018.0,339.0,0.959,0.985,0.2378,4.94,6.41,6.41,0.0473,,,0.959,,A
+mineral,roc,ROC (resistenter C),Kohlenstoff & Stickstoff,PLScv,1018.0,339.0,0.903,0.949,0.054,3.22,2.78,2.78,0.0242,,,0.903,,A
+mineral,tic900,TIC900 (anorg. C),Kohlenstoff & Stickstoff,PLScv,1018.0,339.0,0.868,0.926,0.0262,2.76,1.53,1.53,0.0105,,,0.868,,C
+mineral,caco3,CaCO3,Kohlenstoff & Stickstoff,PLScv,556.0,186.0,0.715,0.464,0.2726,1.88,0.61,0.61,0.1122,,-0.179,0.781,,D
+mineral,ton,Ton,Textur,Cubist,670.0,223.0,0.723,0.703,3.6891,1.9,2.63,2.63,2.7586,,0.545,0.768,,A
+mineral,schluff,Schluff,Textur,Cubist,644.0,214.0,0.803,0.864,9.3838,2.26,3.58,3.58,7.4466,,0.837,0.791,,A
+mineral,sand,Sand,Textur,Cubist,644.0,214.0,0.848,0.888,10.1039,2.57,4.17,4.17,7.5004,,0.85,0.844,,A
+mineral,ph_cacl2,pH (CaCl2),Bodenchemie,Cubist,868.0,290.0,0.874,0.923,0.2934,2.83,3.43,3.43,0.2254,,0.85,0.876,,A
+mineral,kak_pot,KAK (potentiell),Bodenchemie,Cubist,428.0,143.0,0.783,0.857,3.5392,2.15,1.96,1.96,0.1401,,,0.783,,B
+mineral,kak_eff,KAK (effektiv),Bodenchemie,Cubist,164.0,55.0,0.49,0.633,4.3105,1.41,1.65,1.65,0.1658,,,0.49,,C
+mineral,fe_d,Fe (Dithionit),Bodenchemie,Cubist,605.0,202.0,0.833,0.909,0.1907,2.45,3.34,3.34,0.0501,,,0.833,,A
+mineral,fe_o,Fe (Oxalat),Bodenchemie,Cubist,605.0,202.0,0.77,0.903,0.0933,2.09,2.47,2.47,0.0363,,,0.77,,B
+mineral,trd,Trockenrohdichte,Bodenphysik,Cubist,403.0,134.0,0.541,0.404,0.191,1.48,2.1,2.1,0.1604,,,0.541,,B
+mineral,p_cal,P2O5 (CAL),Nährstoffe,Cubist,326.0,109.0,0.72,0.835,6.2677,1.9,1.76,1.76,0.4306,,,0.72,,C
+mineral,k_cal,K2O (CAL),Nährstoffe,Cubist,326.0,109.0,0.361,0.536,12.4964,1.26,0.88,0.88,0.5922,,,0.361,,D
+mineral,mg_cacl2,Mg (CaCl2),Nährstoffe,XGBoost,580.0,193.0,0.444,0.622,6.9626,1.35,1.58,1.58,0.3255,,,0.444,,C
+mineral,p_kw,P (Königswasser),Nährstoffe,Cubist,694.0,231.0,0.886,0.938,179.4456,2.97,3.59,2.84,0.2234,,0.871,0.875,,A
+mineral,k_kw,K (Königswasser),Nährstoffe,Cubist,694.0,231.0,0.0,0.091,1970.1651,1.0,1.52,0.46,0.8729,,0.017,-0.105,,D
+mineral,mg_kw,Mg (Königswasser),Nährstoffe,Cubist,694.0,231.0,0.096,0.11,3249.3789,1.05,1.08,0.56,0.7936,,0.116,0.091,,D
+mineral,as_kw,Arsen,Schwermetalle (Königswasser),XGBoost,824.0,274.0,0.642,0.74,103.7367,1.68,0.45,0.45,0.5165,,0.323,0.689,,D
+mineral,cd_kw,Cadmium,Schwermetalle (Königswasser),XGBoost,824.0,274.0,0.623,0.764,2.4598,1.63,0.82,0.82,0.3373,,0.391,0.767,,D
+mineral,cr_kw,Chrom,Schwermetalle (Königswasser),Cubist,824.0,274.0,0.726,0.867,15.4748,1.92,1.94,1.94,0.1828,,0.559,0.759,,B
+mineral,cu_kw,Kupfer,Schwermetalle (Königswasser),Cubist,824.0,274.0,0.7,0.866,30.8486,1.83,1.45,1.45,0.3454,,0.527,0.783,,C
+mineral,hg_kw,Quecksilber,Schwermetalle (Königswasser),Cubist,824.0,274.0,0.739,0.852,0.2512,1.96,0.76,0.76,0.0828,,0.508,0.797,,D
+mineral,ni_kw,Nickel,Schwermetalle (Königswasser),Cubist,824.0,274.0,0.684,0.873,11.3563,1.78,2.45,2.45,0.2285,,0.5,0.696,,B
+mineral,pb_kw,Blei,Schwermetalle (Königswasser),XGBoost,824.0,274.0,0.664,0.777,135.2884,1.73,0.48,0.48,0.4856,,0.437,0.786,,D
+mineral,zn_kw,Zink,Schwermetalle (Königswasser),XGBoost,813.0,271.0,0.746,0.826,122.3874,1.99,2.16,2.16,0.4603,,0.517,0.816,,B
+mineral,bap,Benzo(a)pyren,Organische Schadstoffe,XGBoost,216.0,72.0,0.431,0.425,212.4672,1.33,1.52,1.52,0.7679,,0.431,,,C
+mineral,pak16,PAK (Summe 16 EPA),Organische Schadstoffe,XGBoost,216.0,72.0,0.42,0.427,2941.6466,1.32,1.41,1.41,0.8227,,0.42,,,C
+peat,corg,Corg,Kohlenstoff & Stickstoff,PLScv,1135.0,378.0,0.695,0.625,5.8044,1.81,1.27,0.71,0.0905,,,,0.695,D
+peat,nt,Gesamt-N,Kohlenstoff & Stickstoff,Cubist,1131.0,377.0,0.8,0.905,0.3053,2.24,3.28,3.28,0.0607,,,,0.8,A
+peat,cn,C/N-Verhältnis,Kohlenstoff & Stickstoff,Cubist,1118.0,372.0,0.8,0.866,10.3412,2.24,2.85,2.85,0.1353,,,,0.8,A
+peat,trd,,,,,,,,,,,,,nur 21 Proben (< 60),,,,-
+peat,loi,Glühverlust,Bodenphysik,XGBoost,224.0,74.0,0.562,0.817,13.9393,1.52,1.06,1.06,5.5541,,,,0.562,D
