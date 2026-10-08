@@ -1,10 +1,11 @@
-# 🌱 SaxSSL Bodenschätzung
+# Terra Resiliens Bodenschätzung
 
-**Bodeneigenschaften aus MIR-Spektren – in Sekunden statt Laborwochen.**
+**Bodeneigenschaften aus MIR-Spektren**
 
 OPUS-Dateien eines Bruker Alpha II (DRIFT) hochladen, Tabelle mit geschätzten
 Bodeneigenschaften herunterladen. Grundlage sind die sächsischen Bodenspektralbibliotheken
-**SaxSSL** und **SaxTox**, zum Vergleich daneben die **OSSL/KSSL**.
+**SaxSSL** und **SaxTox**, zum Vergleich daneben die **OSSL/KSSL** und als Ergänzung **pmird**
+für organische Böden und Torfe.
 
 ![Python](https://img.shields.io/badge/python-3.12-blue)
 ![Streamlit](https://img.shields.io/badge/app-Streamlit-FF4B4B)
@@ -12,12 +13,12 @@ Bodeneigenschaften herunterladen. Grundlage sind die sächsischen Bodenspektralb
 
 ---
 
-## Was die App kann
+## Eine App um schnell Bruker `.0`-Dateien auszuwerten
 
 - 📂 **Beliebig viele `.0`-Dateien** hochladen; Wiederholungsmessungen (`Probe7-1.0`, `Probe7-2.0`, …) werden automatisch gemittelt
-- 📊 **Rund 30 Eigenschaften**: Kohlenstoff & Stickstoff, Textur, pH, KAK, Eisenoxide, Nährstoffe, Schwermetalle, PAK
-- 🎯 **Ehrliche Unsicherheit**: ~68-%-Intervall aus Kreuzvalidierungsfehlern, breiter für untypische Spektren; Güteklasse 🟢🟡🟠🔴 je Eigenschaft
-- ⚠️ **Ähnlichkeit zur Bibliothek**: Ampel je Probe ganz oben in der Ergebnistabelle
+- 📊 **Ca. 30 Eigenschaften**: Kohlenstoff & Stickstoff, Textur, pH, KAK, Eisenoxide, Nährstoffe, Schwermetalle, PAK
+- 🎯 **Unsicherheit**: Abschätzung der Vorhersagegüte aus Modellen und spektraler Ähnlichkeit; Güteklasse 🟢🟡🟠🔴 je Eigenschaft
+- ⚠️ **Ähnlichkeit zur Bibliothek**: Ampel je Probe und Warnung bei Extrapolation
 - 🌿 **Torfmodus** für organische Proben (wird ab geschätztem Corg > 12 % vorgeschlagen)
 - 🌍 **OSSL/KSSL-Vergleich**: Schätzungen des US-Modells daneben
 - 💾 **Export** als CSV oder Excel
@@ -43,9 +44,9 @@ Klassen nach RPIQ auf einem unabhängigen Testset · alle Kennzahlen in [`models
 | 🟢 **A** | Corg, Ct, Nt, TOC, TOC400, ROC · Ton, Schluff, Sand · pH (CaCl₂) · Fe_d · P (Königswasser) |
 | 🟡 **B** | KAK pot. · Fe_o · Trockenrohdichte · Cr, Ni, Zn |
 | 🟠 **C** | C/N · TIC900 · KAK eff. · P₂O₅ (CAL) · Mg (CaCl₂) · Cu · Benzo(a)pyren, PAK16 |
-| 🔴 **D** | nur per Schieberegler: CaCO₃, K₂O (CAL), K, Mg, As, Cd, Hg, Pb (Königswasser) |
+| 🔴 **D** | CaCO₃, K₂O (CAL), K, Mg, As, Cd, Hg, Pb (Königswasser) |
 
-**Torf** (pmird): Nt, C/N (A) · **OSSL/KSSL**: 11 Modelle (Achtung: USDA-Sandgrenze 50 µm)
+**Torf** (pmird): Nt, C/N (A) · **OSSL/KSSL**: 11 Modelle (Achtung: USDA-Texturgrenze Sand/Schluff bei 50 µm)
 
 > **Gut zu wissen:** Schwermetalle und PAK haben kein eigenes MIR-Signal. Sie werden
 > indirekt über organische Substanz, Ton und Eisenoxide geschätzt – gut fürs Screening,
@@ -72,22 +73,6 @@ tests/                 End-to-End-Test  →  pip install pytest && pytest
 tools/strip_models.py  entfernt Probendaten aus den Modelldateien (vor jedem Commit)
 ```
 
-<details>
-<summary><b>Für Betreuende: Modelle aktualisieren</b></summary>
-
-Trainiert wird im vollständigen `soilspec`-Paket (`scripts/rebuild_models.py`), dann:
-
-```bash
-SRC=<Pfad zum soilspec-Projekt>/models
-rsync -a --delete --exclude 'dataset_*' --exclude metrics_detail.json $SRC/library $SRC/ossl models/
-python tools/strip_models.py   # Testset-Daten (Proben-IDs, Laborwerte) aus den Modellen entfernen
-pytest
-```
-
-Die festen Versionen in `requirements.txt` gehören zu den gespeicherten Modellen –
-nur zusammen mit einem Neutraining ändern.
-</details>
-
 ---
 
-Entwickelt im [DryWet Soil-Water-Lab](https://www.drywet.de) der TU Bergakademie Freiberg · MIT-Lizenz
+Entwickelt im [DryWet Soil-Water-Lab](https://www.drywet.de) der TU Bergakademie Freiberg · MIT-Lizenz · Co-Coded with Claude
